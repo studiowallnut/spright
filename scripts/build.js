@@ -9,6 +9,7 @@ const dist = join(siteRoot, "dist");
 const requiredFiles = [
   "index.html",
   "styles.css",
+  "scripts/analytics.js",
   "scripts/main.js",
   "assets/images/main-menu-background.png",
   "assets/images/spright-logo-cropped.png",
@@ -27,8 +28,15 @@ await mkdir(dist, { recursive: true });
 await mkdir(join(dist, "scripts"), { recursive: true });
 await copyFile(join(siteRoot, "index.html"), join(dist, "index.html"));
 await copyFile(join(siteRoot, "styles.css"), join(dist, "styles.css"));
+await copyFile(join(siteRoot, "scripts/analytics.js"), join(dist, "scripts/analytics.js"));
 await copyFile(join(siteRoot, "scripts/main.js"), join(dist, "scripts/main.js"));
 await cp(join(siteRoot, "assets"), join(dist, "assets"), { recursive: true });
 await copyFile(join(siteRoot, ".nojekyll"), join(dist, ".nojekyll"));
+
+try {
+  await copyFile(join(siteRoot, "CNAME"), join(dist, "CNAME"));
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
 
 console.log("Built Spright site to dist/");

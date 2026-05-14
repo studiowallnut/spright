@@ -9,14 +9,16 @@
     <meta property="og:title" content="Spright">
     <meta property="og:description" content="Dash, fight, upgrade, and survive a visually rich action-platformer built around crowns, blueprints, seal gates, and boss encounters.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sprightgame.com/">
     <meta property="og:image" content="assets/images/main-menu-background.png">
+    <link rel="canonical" href="https://sprightgame.com/">
     <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar" data-topbar>
-        <a class="brand" href="#top" aria-label="Spright home">
+        <a class="brand" href="#top" aria-label="Spright home" data-analytics-event="nav_click" data-analytics-label="Brand">
           <img src="assets/images/icon.svg" alt="" class="brand__mark">
           <span>Spright</span>
         </a>
@@ -27,10 +29,10 @@
           <span class="sr-only">Menu</span>
         </button>
         <nav id="site-nav" class="nav" data-nav>
-          <a href="#features">Gameplay</a>
-          <a href="#media">Media</a>
-          <a href="#world">World</a>
-          <a href="#social">Follow</a>
+          <a href="#features" data-analytics-event="nav_click" data-analytics-label="Gameplay">Gameplay</a>
+          <a href="#media" data-analytics-event="nav_click" data-analytics-label="Media">Media</a>
+          <a href="#world" data-analytics-event="nav_click" data-analytics-label="World">World</a>
+          <a href="#social" data-analytics-event="nav_click" data-analytics-label="Follow">Follow</a>
         </nav>
       </header>
 
@@ -50,11 +52,11 @@
               <img class="hero__logo" src="assets/images/spright-logo-cropped.png" alt="Spright">
               <p class="hero__tagline">A crownlit action-platformer of swift movement, spectral gates, and boss-sized danger.</p>
               <div class="hero__actions" aria-label="Primary actions">
-                <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener">
+                <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Hero CTA">
                   <span class="button__icon">▶</span>
                   Wishlist / Play on Steam
                 </a>
-                <a class="button button--ghost" href="#media">
+                <a class="button button--ghost" href="#media" data-analytics-event="nav_click" data-analytics-label="Hero View Media">
                   <span class="button__icon">▣</span>
                   View Media
                 </a>
@@ -83,7 +85,7 @@
               </div>
             </div>
           </div>
-          <a class="scroll-cue" href="#features" aria-label="Skip to gameplay section"></a>
+          <a class="scroll-cue" href="#features" aria-label="Skip to gameplay section" data-analytics-event="nav_click" data-analytics-label="Scroll cue"></a>
         </section>
 
         <section id="features" class="section section--dark">
@@ -149,27 +151,27 @@
           </div>
 
           <div class="media-grid">
-            <button class="media-tile media-tile--large reveal" type="button" data-lightbox="assets/images/deep-sea-background.png" data-caption="Deep Sea biome">
+            <button class="media-tile media-tile--large reveal" type="button" data-lightbox="assets/images/deep-sea-background.png" data-caption="Deep Sea biome" data-analytics-event="media_open" data-analytics-label="Deep Sea biome">
               <img src="assets/images/deep-sea-background.png" alt="Deep sea cavern environment">
               <span>Deep Sea</span>
             </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/into-space.png" data-caption="Space biome">
+            <button class="media-tile reveal" type="button" data-lightbox="assets/images/into-space.png" data-caption="Space biome" data-analytics-event="media_open" data-analytics-label="Space biome">
               <img src="assets/images/into-space.png" alt="Space field with rocks and planets">
               <span>Into Space</span>
             </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/townhall-mainhub.png" data-caption="Town Hall hub">
+            <button class="media-tile reveal" type="button" data-lightbox="assets/images/townhall-mainhub.png" data-caption="Town Hall hub" data-analytics-event="media_open" data-analytics-label="Town Hall hub">
               <img src="assets/images/townhall-mainhub.png" alt="Town hall hub building">
               <span>Town Hall</span>
             </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer boss">
+            <button class="media-tile reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer boss" data-analytics-event="media_open" data-analytics-label="Boomboxer boss">
               <img src="assets/images/boomboxer-boss.png" alt="Boomboxer boss sprite">
               <span>Boomboxer</span>
             </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter boss">
+            <button class="media-tile reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter boss" data-analytics-event="media_open" data-analytics-label="Drone Hunter boss">
               <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter boss sprite">
               <span>Drone Hunter</span>
             </button>
-            <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/ember-cavern.png" data-caption="Ember cavern arena">
+            <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/ember-cavern.png" data-caption="Ember cavern arena" data-analytics-event="media_open" data-analytics-label="Ember cavern arena">
               <img src="assets/images/ember-cavern.png" alt="Fiery cavern environment">
               <span>Ember Cavern</span>
             </button>
@@ -182,7 +184,7 @@
             <h2>Reclaim power from rooms that fight back.</h2>
             <p>Spright is an atmospheric indie action-platformer starring a flame-headed warrior moving through dangerous biomes, sealed arenas, and boss encounters. The game centers on responsive traversal, melee pressure, crown-based health, coins, blueprint upgrades, and choices that can change how the world reacts.</p>
             <p>It is built in Godot with a strong focus on cinematic lighting, pixel-forward characters, and punchy room-scale challenges.</p>
-            <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener">
+            <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="About CTA">
               <span class="button__icon">★</span>
               Wishlist Spright
             </a>
@@ -201,32 +203,32 @@
             <p>Wishlist the game, follow development updates, and replace placeholder links when final community channels are ready.</p>
           </div>
           <div class="social-grid">
-            <a class="social-card reveal" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener">
+            <a class="social-card reveal" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Social Steam">
               <span class="social-card__icon">S</span>
               <strong>Steam</strong>
               <span>Wishlist / Play</span>
             </a>
-            <a class="social-card reveal" href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener">
+            <a class="social-card reveal" href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="youtube" data-analytics-label="YouTube">
               <span class="social-card__icon">Y</span>
               <strong>YouTube</strong>
               <span>@amaantrieshard</span>
             </a>
-            <a class="social-card social-card--placeholder reveal" href="https://x.com/yourhandle" target="_blank" rel="noopener">
+            <a class="social-card social-card--placeholder reveal" href="https://x.com/yourhandle" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="x" data-analytics-label="X placeholder">
               <span class="social-card__icon">X</span>
               <strong>X / Twitter</strong>
               <span>Placeholder link</span>
             </a>
-            <a class="social-card social-card--placeholder reveal" href="https://discord.gg/yourinvite" target="_blank" rel="noopener">
+            <a class="social-card social-card--placeholder reveal" href="https://discord.gg/yourinvite" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="discord" data-analytics-label="Discord placeholder">
               <span class="social-card__icon">D</span>
               <strong>Discord</strong>
               <span>Placeholder invite</span>
             </a>
-            <a class="social-card social-card--placeholder reveal" href="https://www.instagram.com/yourhandle/" target="_blank" rel="noopener">
+            <a class="social-card social-card--placeholder reveal" href="https://www.instagram.com/yourhandle/" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="instagram" data-analytics-label="Instagram placeholder">
               <span class="social-card__icon">I</span>
               <strong>Instagram</strong>
               <span>Placeholder link</span>
             </a>
-            <a class="social-card social-card--placeholder reveal" href="https://www.tiktok.com/@yourhandle" target="_blank" rel="noopener">
+            <a class="social-card social-card--placeholder reveal" href="https://www.tiktok.com/@yourhandle" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="tiktok" data-analytics-label="TikTok placeholder">
               <span class="social-card__icon">T</span>
               <strong>TikTok</strong>
               <span>Placeholder link</span>
@@ -241,20 +243,21 @@
           <p>© <span data-year></span> Spright. All rights reserved.</p>
         </div>
         <nav class="footer__links" aria-label="Footer links">
-          <a href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener">Steam</a>
-          <a href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://x.com/yourhandle" target="_blank" rel="noopener">X</a>
-          <a href="#top">Back to top</a>
+          <a href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Footer Steam">Steam</a>
+          <a href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="youtube" data-analytics-label="Footer YouTube">YouTube</a>
+          <a href="https://x.com/yourhandle" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="x" data-analytics-label="Footer X placeholder">X</a>
+          <a href="#top" data-analytics-event="nav_click" data-analytics-label="Footer Back to top">Back to top</a>
         </nav>
       </footer>
     </div>
 
     <dialog class="lightbox" data-lightbox-dialog>
-      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close media preview">×</button>
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close media preview" data-analytics-event="media_close" data-analytics-label="Close media preview">×</button>
       <img src="" alt="" data-lightbox-image>
       <p data-lightbox-caption></p>
     </dialog>
 
+    <script src="scripts/analytics.js" defer></script>
     <script src="scripts/main.js" defer></script>
   </body>
 </html>
