@@ -29,6 +29,7 @@
           <span class="sr-only">Menu</span>
         </button>
         <nav id="site-nav" class="nav" data-nav>
+          <a href="#top" data-analytics-event="nav_click" data-analytics-label="Trailer">Trailer</a>
           <a href="#features" data-analytics-event="nav_click" data-analytics-label="Gameplay">Gameplay</a>
           <a href="#media" data-analytics-event="nav_click" data-analytics-label="Media">Media</a>
           <a href="#world" data-analytics-event="nav_click" data-analytics-label="World">World</a>
@@ -47,21 +48,29 @@
           </div>
           <div class="hero__inner">
             <div class="hero__copy reveal">
-              <p class="eyebrow">Wishlist now on Steam</p>
+              <p class="eyebrow">Official trailer</p>
               <h1 id="hero-title" class="sr-only">Spright</h1>
               <img class="hero__logo" src="assets/images/spright-logo-cropped.png" alt="Spright">
+              <div class="release-callout" aria-label="Release window">
+                <span>Out in September</span>
+              </div>
               <p class="hero__tagline">A crownlit action-platformer of swift movement, spectral gates, and boss-sized danger.</p>
+              <p class="hero__description">Dash through atmospheric biomes, crack open Spirit Seal Gates, collect blueprints, and battle strange bosses in a hand-crafted indie adventure built for speed, impact, and replayable challenge.</p>
               <div class="hero__actions" aria-label="Primary actions">
                 <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Hero CTA">
                   <span class="button__icon">▶</span>
-                  Wishlist / Play on Steam
+                  Wishlist on Steam
                 </a>
-                <a class="button button--ghost" href="#media" data-analytics-event="nav_click" data-analytics-label="Hero View Media">
-                  <span class="button__icon">▣</span>
-                  View Media
-                </a>
+                <span class="button button--ghost button--disabled" aria-disabled="true">
+                  <span class="button__icon">★</span>
+                  Play Now - Coming Soon
+                </span>
               </div>
               <dl class="hero__stats" aria-label="Game highlights">
+                <div>
+                  <dt>Release</dt>
+                  <dd>September</dd>
+                </div>
                 <div>
                   <dt>Movement</dt>
                   <dd>Dash, jump, swim</dd>
@@ -77,11 +86,27 @@
               </dl>
             </div>
 
-            <div class="hero__art reveal reveal--delay" aria-hidden="true">
-              <div class="keyart-card">
-                <img class="keyart-card__scene" src="assets/images/ember-cavern.png" alt="">
-                <img class="keyart-card__player" src="assets/images/player-spright.png" alt="">
-                <img class="keyart-card__crown" src="assets/images/health-crown.png" alt="">
+            <div class="hero__trailer reveal reveal--delay" aria-label="Spright trailer">
+              <div class="trailer-card" data-analytics-impression="trailer_impression" data-analytics-label="Hero YouTube trailer">
+                <div class="trailer-card__frame">
+                  <span class="trailer-card__badge">Official trailer</span>
+                  <iframe
+                    src="https://www.youtube.com/embed/ov6C59xiLlo?autoplay=1&mute=1&playsinline=1&loop=1&playlist=ov6C59xiLlo&controls=1&rel=0&modestbranding=1"
+                    title="Spright official trailer"
+                    loading="eager"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="trailer-card__meta">
+                  <div>
+                    <p class="eyebrow">Watch the trailer</p>
+                    <strong>Spright launches this September.</strong>
+                  </div>
+                  <a class="button button--mini" href="https://www.youtube.com/watch?v=ov6C59xiLlo" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="youtube" data-analytics-label="Hero Trailer YouTube">
+                    Open YouTube
+                  </a>
+                </div>
               </div>
             </div>
           </div>

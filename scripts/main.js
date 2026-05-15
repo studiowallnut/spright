@@ -49,6 +49,29 @@ for (const element of document.querySelectorAll(".reveal")) {
   revealObserver.observe(element);
 }
 
+const impressionObserver = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+
+      const element = entry.target;
+      if (typeof window.sprightAnalytics?.trackEvent === "function") {
+        window.sprightAnalytics.trackEvent(element.dataset.analyticsImpression, {
+          category: "media",
+          label: element.dataset.analyticsLabel || ""
+        });
+      }
+
+      impressionObserver.unobserve(element);
+    }
+  },
+  { threshold: 0.45 }
+);
+
+for (const element of document.querySelectorAll("[data-analytics-impression]")) {
+  impressionObserver.observe(element);
+}
+
 for (const tile of document.querySelectorAll("[data-lightbox]")) {
   tile.addEventListener("click", () => {
     if (!lightbox || !lightboxImage || !lightboxCaption) return;
