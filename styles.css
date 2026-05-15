@@ -151,7 +151,7 @@ button {
 .hero {
   position: relative;
   min-height: 100svh;
-  padding: 120px 0 96px;
+  padding: 104px 0 96px;
   isolation: isolate;
 }
 
@@ -213,7 +213,7 @@ button {
   width: var(--wrap);
   max-width: 1360px;
   min-height: 0;
-  margin: 0 auto;
+  margin: clamp(34px, 4vw, 56px) auto 0;
 }
 
 .hero__copy {
@@ -425,8 +425,8 @@ button {
 
 .hero__trailer {
   min-width: 0;
-  width: min(1500px, calc(100vw - 80px));
-  margin: clamp(36px, 5vw, 68px) auto 0;
+  width: min(1680px, calc(100vw - 48px));
+  margin: 0 auto;
 }
 
 .trailer-card {
@@ -476,10 +476,41 @@ button {
   background: transparent;
 }
 
+.trailer-card__overlay {
+  position: absolute;
+  z-index: 4;
+  left: clamp(18px, 3vw, 42px);
+  top: clamp(18px, 3vw, 36px);
+  pointer-events: none;
+  max-width: min(34vw, 480px);
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.78));
+}
+
+.trailer-card__overlay img {
+  width: min(430px, 100%);
+  mix-blend-mode: screen;
+}
+
+.trailer-card__overlay span {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 0 14px;
+  border: 1px solid rgba(244, 194, 90, 0.48);
+  background: rgba(7, 9, 13, 0.7);
+  color: var(--gold);
+  font-size: clamp(0.86rem, 1.25vw, 1.18rem);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
 .trailer-card__badge {
   position: absolute;
   z-index: 3;
-  left: 14px;
+  right: 14px;
   top: 14px;
   display: inline-flex;
   align-items: center;
@@ -1021,7 +1052,7 @@ button {
   }
 
   .hero {
-    padding-top: 98px;
+    padding-top: 92px;
   }
 
   .hero__backdrop::after {
@@ -1036,7 +1067,21 @@ button {
 
   .hero__trailer {
     width: var(--wrap);
-    margin-top: 28px;
+    margin-top: 0;
+  }
+
+  .trailer-card__overlay {
+    max-width: 58vw;
+  }
+
+  .trailer-card__overlay span {
+    min-height: 34px;
+    margin-top: 8px;
+    padding: 0 10px;
+  }
+
+  .trailer-card__badge {
+    display: none;
   }
 
   .hero__stats {
