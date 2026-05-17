@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfyn5ro3pokjq"
-path="res://.godot/imported/deep-sea-background.png-66be52d2a23ad48de83b8237581c1a28.ctex"
+path="res://.godot/imported/deep-sea-background.png-a9c233b7162fb868da081d37037823e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/images/deep-sea-background.png"
-dest_files=["res://.godot/imported/deep-sea-background.png-66be52d2a23ad48de83b8237581c1a28.ctex"]
+source_file="res://site/dist/assets/images/deep-sea-background.png"
+dest_files=["res://.godot/imported/deep-sea-background.png-a9c233b7162fb868da081d37037823e0.ctex"]
 
 [params]
 

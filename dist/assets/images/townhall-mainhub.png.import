@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn0vwj6vy5wbv"
-path="res://.godot/imported/townhall-mainhub.png-2eaf9f72ca9bbc967a2eebff13f9c7f7.ctex"
+path="res://.godot/imported/townhall-mainhub.png-c4186d75ff388b903e8258ce77e68c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/images/townhall-mainhub.png"
-dest_files=["res://.godot/imported/townhall-mainhub.png-2eaf9f72ca9bbc967a2eebff13f9c7f7.ctex"]
+source_file="res://site/dist/assets/images/townhall-mainhub.png"
+dest_files=["res://.godot/imported/townhall-mainhub.png-c4186d75ff388b903e8258ce77e68c93.ctex"]
 
 [params]
 
