@@ -2,84 +2,8 @@
   "updated": "2026-05-17",
   "updates": [
     {
-      "title": "Pressure-current caves",
-      "summary": "Added pressure-current caves in the Deep Sea biome with drifting enemies and collapsing coral tunnels."
-    },
-    {
-      "title": "Aerial momentum rework",
-      "summary": "Reworked aerial movement so chained dashes carry more momentum through combat rooms."
-    },
-    {
-      "title": "Spirit Seal Gate variants",
-      "summary": "New Spirit Seal Gate variants now include survival waves, precision platform routes, and no-hit arena trials."
-    },
-    {
-      "title": "Blueprint modifiers",
-      "summary": "Added blueprint modifiers that trade survivability for higher crown payout and faster movement speed."
-    },
-    {
-      "title": "Enemy stagger readability",
-      "summary": "Updated enemy stagger reactions to improve combat readability during crowded encounters."
-    },
-    {
-      "title": "Ember Cavern expansion",
-      "summary": "Expanded Ember Cavern with lava lift machinery, heat vents, and hidden traversal shortcuts."
-    },
-    {
-      "title": "Phase-evolving boss hazards",
-      "summary": "Boss arenas now feature biome-specific hazards that evolve between phases."
-    },
-    {
-      "title": "Controller responsiveness",
-      "summary": "Improved controller responsiveness and reduced input buffering during hammer slam recovery."
-    },
-    {
-      "title": "Environmental storytelling props",
-      "summary": "Added new environmental storytelling props across Town Hall and Assembly sectors."
-    },
-    {
-      "title": "Early-game crown economy",
-      "summary": "Rebalanced early-game crown economy to make upgrade paths less restrictive."
-    },
-    {
-      "title": "Low-gravity Space chains",
-      "summary": "Space biome now includes low-gravity traversal chains and projectile-heavy ambush encounters."
-    },
-    {
-      "title": "Cinematic lighting pass",
-      "summary": "Improved cinematic lighting pass for ruins, underground halls, and ocean pressure zones."
-    },
-    {
-      "title": "Hidden challenge rooms",
-      "summary": "Added hidden challenge rooms containing prototype relic upgrades and bonus currency caches."
-    },
-    {
-      "title": "Aggressive enemy patrols",
-      "summary": "Enemy patrols now react more aggressively when players break Spirit Seal structures nearby."
-    },
-    {
-      "title": "Smoother room transitions",
-      "summary": "Updated room transitions to reduce loading hitching between combat-heavy arenas."
-    },
-    {
-      "title": "Ambient soundtrack layering",
-      "summary": "Added new ambient soundtrack layering for underwater and industrial regions."
-    },
-    {
-      "title": "Expanded lore fragments",
-      "summary": "Expanded lore fragments describing the origin of the Crownless kingdoms and sealed gates."
-    },
-    {
-      "title": "Heavier melee impact",
-      "summary": "Refined hitstop and screen shake values to make melee impacts feel heavier without slowing traversal."
-    },
-    {
-      "title": "High-risk relics",
-      "summary": "Added optional high-risk relics that permanently alter enemy behavior for a run."
-    },
-    {
-      "title": "Dynamic miniboss routes",
-      "summary": "New miniboss encounters now appear dynamically in select traversal routes."
+      "title": "Update",
+      "summary": "skibidi toilet"
     }
   ]
 }
