@@ -1,0 +1,21 @@
+{
+  "updated": "2026-05-17",
+  "updates": [
+    {
+      "title": "Bug fixes",
+      "summary": "Resolved several menu, combat, and room-flow issues reported during demo testing."
+    },
+    {
+      "title": "Added Discord",
+      "summary": "Added a direct Discord link so players can join development discussion and share feedback."
+    },
+    {
+      "title": "Performance improvements",
+      "summary": "Reduced frame spikes in busy rooms and tightened UI transitions across the demo."
+    },
+    {
+      "title": "Balance pass",
+      "summary": "Adjusted early combat pressure, pickup pacing, and challenge gate readability."
+    }
+  ]
+}

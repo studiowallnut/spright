@@ -33,6 +33,7 @@
           <a href="#features" data-analytics-event="nav_click" data-analytics-label="Gameplay">Gameplay</a>
           <a href="#media" data-analytics-event="nav_click" data-analytics-label="Media">Media</a>
           <a href="#world" data-analytics-event="nav_click" data-analytics-label="World">World</a>
+          <a href="#updates" data-analytics-event="nav_click" data-analytics-label="Updates">Updates</a>
           <a href="#social" data-analytics-event="nav_click" data-analytics-label="Follow">Follow</a>
         </nav>
       </header>
@@ -185,6 +186,28 @@
             <img src="assets/images/octoboss.png" alt="Octoboss" class="boss-stack__boss boss-stack__boss--octo">
             <img src="assets/images/anglerfish.png" alt="Anglerfish" class="boss-stack__boss boss-stack__boss--angler">
             <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter" class="boss-stack__boss boss-stack__boss--drone">
+          </div>
+        </section>
+
+        <section id="updates" class="updates section" aria-labelledby="updates-title">
+          <div class="section__header reveal">
+            <p class="eyebrow">Latest Updates</p>
+            <h2 id="updates-title">What's changing in Spright.</h2>
+            <p>Recent development notes pulled from the same update log used by the in-game menu.</p>
+          </div>
+
+          <div class="updates-panel reveal reveal--delay" data-updates-panel>
+            <div class="updates-panel__topline" aria-hidden="true"></div>
+            <div class="updates-panel__header">
+              <span>Update Log</span>
+              <time data-updates-date></time>
+            </div>
+            <div class="updates-list" data-updates-list aria-live="polite">
+              <article class="update-item update-item--loading">
+                <h3>Loading updates...</h3>
+                <p>Checking the latest Spright development notes.</p>
+              </article>
+            </div>
           </div>
         </section>
 

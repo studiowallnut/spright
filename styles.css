@@ -784,6 +784,88 @@ button {
   animation: heroFloat 4.8s ease-in-out infinite;
 }
 
+.updates {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(244, 194, 90, 0.14), transparent 24rem),
+    radial-gradient(circle at 82% 68%, rgba(72, 216, 243, 0.1), transparent 26rem),
+    #080d14;
+}
+
+.updates-panel {
+  position: relative;
+  width: var(--wrap);
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(244, 194, 90, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(13, 18, 25, 0.88);
+  box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+}
+
+.updates-panel::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.updates-panel__topline {
+  height: 2px;
+  margin: 0 0 20px;
+  background: linear-gradient(90deg, transparent, rgba(244, 194, 90, 0.86), rgba(242, 101, 34, 0.62), transparent);
+}
+
+.updates-panel__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.updates-panel__header time {
+  color: rgba(245, 239, 225, 0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.updates-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.update-item {
+  min-height: 168px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(244, 194, 90, 0.09), rgba(255, 255, 255, 0.025)),
+    rgba(7, 9, 13, 0.52);
+}
+
+.update-item h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+}
+
+.update-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.update-item--loading {
+  grid-column: 1 / -1;
+}
+
 .social-grid {
   width: var(--wrap);
   display: grid;
@@ -961,6 +1043,10 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .updates-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .boss-stack {
     min-height: 520px;
   }
@@ -1039,7 +1125,8 @@ button {
   }
 
   .feature-grid,
-  .social-grid {
+  .social-grid,
+  .updates-list {
     grid-template-columns: 1fr;
   }
 

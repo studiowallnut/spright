@@ -6,6 +6,8 @@ const lightbox = document.querySelector("[data-lightbox-dialog]");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
 const lightboxCaption = document.querySelector("[data-lightbox-caption]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
+const updatesList = document.querySelector("[data-updates-list]");
+const updatesDate = document.querySelector("[data-updates-date]");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -93,4 +95,55 @@ if (lightboxClose && lightbox) {
       lightbox.close();
     }
   });
+}
+
+const renderUpdates = (payload) => {
+  if (!updatesList) return;
+
+  const updates = Array.isArray(payload?.updates) ? payload.updates : [];
+  if (updatesDate && payload?.updated) {
+    updatesDate.textContent = `Updated ${payload.updated}`;
+  }
+
+  updatesList.replaceChildren();
+  if (updates.length === 0) {
+    const empty = document.createElement("article");
+    empty.className = "update-item update-item--loading";
+    empty.innerHTML = "<h3>No updates yet</h3><p>Check back soon for development notes.</p>";
+    updatesList.append(empty);
+    return;
+  }
+
+  for (const update of updates) {
+    const item = document.createElement("article");
+    item.className = "update-item";
+
+    const title = document.createElement("h3");
+    title.textContent = update.title || "Update";
+
+    const summary = document.createElement("p");
+    summary.textContent = update.summary || "";
+
+    item.append(title, summary);
+    updatesList.append(item);
+  }
+};
+
+if (updatesList) {
+  fetch("data/updates.json", { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Updates request failed: ${response.status}`);
+      return response.json();
+    })
+    .then(renderUpdates)
+    .catch(() => {
+      renderUpdates({
+        updates: [
+          {
+            title: "Updates unavailable",
+            summary: "The latest update log could not be loaded right now."
+          }
+        ]
+      });
+    });
 }
