@@ -214,4 +214,4 @@ Production test after deployment:
 
 ## Social links
 
-Steam and YouTube are exact links. X, Discord, Instagram, and TikTok are placeholders and should be replaced when official URLs are available.
+Steam, YouTube, X, and Discord are exact links. Instagram and TikTok are placeholders and should be replaced when official URLs are available.
