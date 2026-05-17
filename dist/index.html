@@ -200,15 +200,72 @@
             <div class="updates-panel__topline" aria-hidden="true"></div>
             <div class="updates-panel__header">
               <span>Update Log</span>
-              <time data-updates-date></time>
+              <time data-updates-date>Updated 2026-05-17</time>
             </div>
             <div class="updates-list" data-updates-list aria-live="polite">
-              <article class="update-item update-item--loading">
-                <h3>Loading updates...</h3>
-                <p>Checking the latest Spright development notes.</p>
+              <article class="update-item">
+                <h3>Pressure-current caves</h3>
+                <p>Added pressure-current caves in the Deep Sea biome with drifting enemies and collapsing coral tunnels.</p>
+              </article>
+              <article class="update-item">
+                <h3>Aerial momentum rework</h3>
+                <p>Reworked aerial movement so chained dashes carry more momentum through combat rooms.</p>
+              </article>
+              <article class="update-item">
+                <h3>Spirit Seal Gate variants</h3>
+                <p>New Spirit Seal Gate variants now include survival waves, precision platform routes, and no-hit arena trials.</p>
+              </article>
+              <article class="update-item">
+                <h3>Blueprint modifiers</h3>
+                <p>Added blueprint modifiers that trade survivability for higher crown payout and faster movement speed.</p>
+              </article>
+              <article class="update-item">
+                <h3>Enemy stagger readability</h3>
+                <p>Updated enemy stagger reactions to improve combat readability during crowded encounters.</p>
+              </article>
+              <article class="update-item">
+                <h3>Ember Cavern expansion</h3>
+                <p>Expanded Ember Cavern with lava lift machinery, heat vents, and hidden traversal shortcuts.</p>
+              </article>
+              <article class="update-item">
+                <h3>Phase-evolving boss hazards</h3>
+                <p>Boss arenas now feature biome-specific hazards that evolve between phases.</p>
+              </article>
+              <article class="update-item">
+                <h3>Controller responsiveness</h3>
+                <p>Improved controller responsiveness and reduced input buffering during hammer slam recovery.</p>
               </article>
             </div>
           </div>
+          <script>
+            (() => {
+              const list = document.querySelector("[data-updates-list]");
+              const date = document.querySelector("[data-updates-date]");
+              if (!list) return;
+
+              const render = (payload) => {
+                const updates = Array.isArray(payload?.updates) ? payload.updates : [];
+                if (date && payload?.updated) date.textContent = `Updated ${payload.updated}`;
+                if (updates.length === 0) return;
+
+                list.replaceChildren(...updates.map((update) => {
+                  const item = document.createElement("article");
+                  item.className = "update-item";
+                  const title = document.createElement("h3");
+                  title.textContent = update.title || "Update";
+                  const summary = document.createElement("p");
+                  summary.textContent = update.summary || "";
+                  item.append(title, summary);
+                  return item;
+                }));
+              };
+
+              fetch("data/updates.json", { cache: "no-cache" })
+                .then((response) => response.ok ? response.json() : null)
+                .then((payload) => { if (payload) render(payload); })
+                .catch(() => {});
+            })();
+          </script>
         </section>
 
         <section id="social" class="social section" aria-labelledby="social-title">
