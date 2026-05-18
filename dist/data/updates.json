@@ -3,7 +3,7 @@
   "updates": [
     {
       "title": "Update",
-      "summary": "- Reduced the sky elevator repair cost from 20 -> 10 for the demo\n- Removed the recoil/ knockback the boomboxer gives during attacks\n- Make boomboxer’s attack hit speed higher from 1.5s to 1.8\n- Locked the Deep Sea biome for the demo, opened the into space biome (partly, it’s more atmospheric)"
+      "summary": "- Reduced the sky elevator repair cost from 20 -> 10 for the demo\n- Removed the recoil/ knockback the boomboxer gives during attacks\n- Increased boomboxer’s attack hit speed from 1.5s to 1.8s\n- Locked the Deep Sea biome for the demo, opened the into space biome (partly, it’s more atmospheric)"
     }
   ]
 }
