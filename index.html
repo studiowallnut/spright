@@ -217,19 +217,27 @@
 
               const render = (payload) => {
                 const updates = Array.isArray(payload?.updates) ? payload.updates : [];
+                const archive = Array.isArray(payload?.archive) ? payload.archive : [];
                 if (date && payload?.updated) date.textContent = `Updated ${payload.updated}`;
                 if (updates.length === 0) return;
 
-                list.replaceChildren(...updates.map((update) => {
+                const makeItem = (update, archived = false) => {
                   const item = document.createElement("article");
-                  item.className = "update-item";
+                  item.className = archived ? "update-item update-item--archived" : "update-item";
                   const title = document.createElement("h3");
-                  title.textContent = update.title || "Update";
+                  title.textContent = archived && update.updated
+                    ? `${update.title || "Update"} - ${update.updated}`
+                    : update.title || "Update";
                   const summary = document.createElement("p");
                   summary.textContent = update.summary || "";
                   item.append(title, summary);
                   return item;
-                }));
+                };
+
+                list.replaceChildren(
+                  ...updates.map((update) => makeItem(update)),
+                  ...archive.map((update) => makeItem(update, true))
+                );
               };
 
               fetch("data/updates.json", { cache: "no-cache" })

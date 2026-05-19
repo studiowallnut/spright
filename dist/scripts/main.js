@@ -101,6 +101,7 @@ const renderUpdates = (payload) => {
   if (!updatesList) return;
 
   const updates = Array.isArray(payload?.updates) ? payload.updates : [];
+  const archive = Array.isArray(payload?.archive) ? payload.archive : [];
   if (updatesDate && payload?.updated) {
     updatesDate.textContent = `Updated ${payload.updated}`;
   }
@@ -114,18 +115,28 @@ const renderUpdates = (payload) => {
     return;
   }
 
-  for (const update of updates) {
+  const renderUpdate = (update, archived = false) => {
     const item = document.createElement("article");
-    item.className = "update-item";
+    item.className = archived ? "update-item update-item--archived" : "update-item";
 
     const title = document.createElement("h3");
-    title.textContent = update.title || "Update";
+    title.textContent = archived && update.updated
+      ? `${update.title || "Update"} - ${update.updated}`
+      : update.title || "Update";
 
     const summary = document.createElement("p");
     summary.textContent = update.summary || "";
 
     item.append(title, summary);
     updatesList.append(item);
+  };
+
+  for (const update of updates) {
+    renderUpdate(update);
+  }
+
+  for (const update of archive) {
+    renderUpdate(update, true);
   }
 };
 

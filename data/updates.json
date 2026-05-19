@@ -1,7 +1,14 @@
 {
-  "updated": "2026-05-17",
+  "updated": "2026-05-19",
   "updates": [
     {
+      "title": "Update",
+      "summary": "- The \"Into Space\" biome's main gameplay will be reserved for the full game, but you can still get a preview and explore it in the demo! Go to the right and take the elevator\n- Made the kamikaze drone slower when charging\n- Increased the Jester enemy's attack speed from 1.4s -> 2.1s\n- Added a dedicated OST for a traversal room"
+    }
+  ],
+  "archive": [
+    {
+      "updated": "2026-05-17",
       "title": "Update",
       "summary": "- Reduced the sky elevator repair cost from 20 -> 10 for the demo\n- Removed the recoil/ knockback the boomboxer gives during attacks\n- Increased boomboxer’s attack hit speed from 1.5s to 1.8s\n- Locked the Deep Sea biome for the demo, opened the into space biome (partly, it’s more atmospheric)"
     }
