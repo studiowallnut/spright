@@ -14,7 +14,6 @@ const requiredFiles = [
   "scripts/main.js",
   "assets/images/main-menu-background.png",
   "assets/images/spright-logo-cropped.png",
-  "assets/images/player-spright.png",
   "assets/images/ember-cavern.png",
   "assets/images/deep-sea-background.png",
   "assets/images/into-space.png"

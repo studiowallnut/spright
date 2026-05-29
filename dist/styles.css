@@ -583,6 +583,10 @@ button {
   border-color: rgba(72, 216, 243, 0.38);
 }
 
+.feature-card--text-only {
+  justify-content: flex-end;
+}
+
 .feature-card h3 {
   margin: 0 0 10px;
   font-size: 1.24rem;
