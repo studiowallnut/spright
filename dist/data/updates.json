@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-19",
+  "updated": "2026-05-31",
   "updates": [
     {
       "title": "Update",
-      "summary": "- The \"Into Space\" biome's main gameplay will be reserved for the full game, but you can still get a preview and explore it in the demo! Go to the right and take the elevator\n- Made the kamikaze drone slower when charging\n- Increased the Jester enemy's attack speed from 1.4s -> 2.1s\n- Added a dedicated OST for a traversal room"
+      "summary": "- Added a new pre-game Submarine Maze challenge with a proper room exit\n- The \"Into Space\" biome's main gameplay will be reserved for the full game, but you can still get a preview and explore it in the demo! Go to the right and take the elevator\n- Made the kamikaze drone slower when charging\n- Increased the Jester enemy's attack speed from 1.4s -> 2.1s\n- Added a dedicated OST for a traversal room"
     }
   ],
   "archive": [
