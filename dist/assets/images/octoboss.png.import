@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvd73e5tecg5v"
-path="res://.godot/imported/octoboss.png-39980ac790bb50c5fdce3d7656b7f08d.ctex"
+path="res://.godot/imported/octoboss.png-f5ca4249824d587be2359c05c13da5fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/dist/assets/images/octoboss.png"
-dest_files=["res://.godot/imported/octoboss.png-39980ac790bb50c5fdce3d7656b7f08d.ctex"]
+source_file="res://site/assets/images/octoboss.png"
+dest_files=["res://.godot/imported/octoboss.png-f5ca4249824d587be2359c05c13da5fd.ctex"]
 
 [params]
 

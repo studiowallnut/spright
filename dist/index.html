@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Spright | Official Game Site</title>
-    <meta name="description" content="Spright is a fast, atmospheric indie action-platformer about reclaiming fragments of power across ruins, deep sea trenches, industrial skylines, and stranger frontiers.">
-    <meta name="theme-color" content="#07090d">
+    <meta name="description" content="Spright is a fast, atmospheric action-platformer. Descend into hostile worlds, master brutal combat, and reclaim the crown.">
+    <meta name="theme-color" content="#080604">
     <meta property="og:title" content="Spright">
-    <meta property="og:description" content="Dash, fight, upgrade, and survive a visually rich action-platformer built around crowns, blueprints, seal gates, and boss encounters.">
+    <meta property="og:description" content="Descend. Fight. Reclaim the crown. Full release August 14th.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sprightgame.com/">
     <meta property="og:image" content="assets/images/main-menu-background.png">
@@ -16,298 +16,149 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="site-shell">
-      <header class="topbar" data-topbar>
-        <a class="brand" href="#top" aria-label="Spright home" data-analytics-event="nav_click" data-analytics-label="Brand">
-          <img src="favicon.png" alt="" class="brand__mark">
-          <span>Spright</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span class="sr-only">Menu</span>
-        </button>
-        <nav id="site-nav" class="nav" data-nav>
-          <a href="#top" data-analytics-event="nav_click" data-analytics-label="Trailer">Trailer</a>
-          <a href="#features" data-analytics-event="nav_click" data-analytics-label="Gameplay">Gameplay</a>
-          <a href="#media" data-analytics-event="nav_click" data-analytics-label="Media">Media</a>
-          <a href="#world" data-analytics-event="nav_click" data-analytics-label="World">World</a>
-          <a href="#updates" data-analytics-event="nav_click" data-analytics-label="Updates">Updates</a>
-          <a href="#social" data-analytics-event="nav_click" data-analytics-label="Follow">Follow</a>
-        </nav>
-      </header>
+    <header class="topbar" data-topbar>
+      <a class="brand" href="#top" aria-label="Spright home">
+        <img src="assets/images/spright-logo-cropped.png" alt="Spright">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span><span></span><span></span><span class="sr-only">Menu</span>
+      </button>
+      <nav id="site-nav" class="nav" data-nav>
+        <a href="#game">The Game</a>
+        <a href="#worlds">Worlds</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#media">Media</a>
+        <a class="nav__steam" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Header CTA">Wishlist on Steam</a>
+      </nav>
+    </header>
 
-      <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero__backdrop" aria-hidden="true">
-            <img src="assets/images/main-menu-background.png" alt="">
-          </div>
-          <div class="hero__grain" aria-hidden="true"></div>
-          <div class="hero__embers" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
-
-          <h1 id="hero-title" class="sr-only">Spright</h1>
-
-          <div class="hero__trailer reveal" aria-label="Spright trailer">
-            <div class="trailer-card" data-analytics-impression="trailer_impression" data-analytics-label="Hero YouTube trailer">
-              <div class="trailer-card__frame">
-                <iframe
-                  src="https://www.youtube.com/embed/sj7xewH272k?playsinline=1&controls=1&rel=0&modestbranding=1"
-                  title="Spright official trailer"
-                  width="1920"
-                  height="1080"
-                  loading="eager"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero__primary-cta reveal reveal--delay">
-            <a class="button button--store" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Hero CTA">
-              Wishlist on Steam
-            </a>
-          </div>
-
-          <div class="hero__inner hero__inner--below">
-            <div class="hero__copy reveal reveal--delay">
-              <p class="hero__tagline">A crownlit action-platformer of swift movement, spectral gates, and boss-sized danger.</p>
-              <p class="hero__description">Dash through atmospheric biomes, crack open Spirit Seal Gates, collect blueprints, and battle strange bosses in a hand-crafted indie adventure built for speed, impact, and replayable challenge.</p>
-            </div>
-          </div>
-          <a class="scroll-cue" href="#features" aria-label="Skip to gameplay section" data-analytics-event="nav_click" data-analytics-label="Scroll cue"></a>
-        </section>
-
-        <section id="features" class="section section--dark">
-          <div class="section__header reveal">
-            <p class="eyebrow">Gameplay</p>
-            <h2>Fast, readable action with sharp risk and reward.</h2>
-            <p>Spright blends platforming, close-range combat, permanent upgrades, and challenge gates into rooms built for momentum.</p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card feature-card--text-only reveal">
-              <div>
-                <h3>Fluid traversal</h3>
-                <p>Chain jumps, dashes, air movement, and biome-specific traversal as each area bends the rules beneath your feet.</p>
-              </div>
-            </article>
-            <article class="feature-card reveal">
-              <img src="assets/images/hammer.png" alt="" class="feature-card__sprite">
-              <div>
-                <h3>Impact combat</h3>
-                <p>Slash through threats, slam with a hammer, deflect projectiles, and manage invulnerability windows when fights get crowded.</p>
-              </div>
-            </article>
-            <article class="feature-card reveal">
-              <img src="assets/images/active-gate.png" alt="" class="feature-card__sprite">
-              <div>
-                <h3>Spirit Seal Gates</h3>
-                <p>Activate trial gates for timed, no-hit, or enemy-wave challenges that lock the room and pay out only when you hold your nerve.</p>
-              </div>
-            </article>
-            <article class="feature-card reveal">
-              <img src="assets/images/blueprint.png" alt="" class="feature-card__sprite">
-              <div>
-                <h3>Blueprint upgrades</h3>
-                <p>Collect crowns, coins, and blueprints to expand survivability and experiment with risky power modifiers.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="showcase section">
-          <div class="showcase__image reveal">
-            <img src="assets/images/factory-background.png" alt="Industrial sky factory environment from Spright">
-          </div>
-          <div class="showcase__copy reveal reveal--delay">
-            <p class="eyebrow">Built for spectacle</p>
-            <h2>Every region pushes a different mood.</h2>
-            <p>From ruined halls lit by amber dust to spacebound platforms and deep sea pressure zones, Spright uses dramatic environments as more than scenery. They frame hazards, bosses, traversal, and the next reason to press forward.</p>
-            <ul class="check-list">
-              <li>Industrial cityscapes and mechanical arenas</li>
-              <li>Deep sea currents, pressure, and aquatic combat</li>
-              <li>High-contrast ruins made for trailer-ready boss moments</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="media" class="section section--media" aria-labelledby="media-title">
-          <div class="section__header reveal">
-            <p class="eyebrow">Media</p>
-            <h2 id="media-title">Screenshots, key art, and enemies.</h2>
-            <p>A curated look at Spright's current visual identity using the game's own PNG assets.</p>
-          </div>
-
-          <div class="media-grid">
-            <button class="media-tile media-tile--large reveal" type="button" data-lightbox="assets/images/deep-sea-background.png" data-caption="Deep Sea biome" data-analytics-event="media_open" data-analytics-label="Deep Sea biome">
-              <img src="assets/images/deep-sea-background.png" alt="Deep sea cavern environment">
-              <span>Deep Sea</span>
-            </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/into-space.png" data-caption="Space biome" data-analytics-event="media_open" data-analytics-label="Space biome">
-              <img src="assets/images/into-space.png" alt="Space field with rocks and planets">
-              <span>Into Space</span>
-            </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/townhall-mainhub.png" data-caption="Town Hall hub" data-analytics-event="media_open" data-analytics-label="Town Hall hub">
-              <img src="assets/images/townhall-mainhub.png" alt="Town hall hub building">
-              <span>Town Hall</span>
-            </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer boss" data-analytics-event="media_open" data-analytics-label="Boomboxer boss">
-              <img src="assets/images/boomboxer-boss.png" alt="Boomboxer boss sprite">
-              <span>Boomboxer</span>
-            </button>
-            <button class="media-tile reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter boss" data-analytics-event="media_open" data-analytics-label="Drone Hunter boss">
-              <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter boss sprite">
-              <span>Drone Hunter</span>
-            </button>
-            <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/ember-cavern.png" data-caption="Ember cavern arena" data-analytics-event="media_open" data-analytics-label="Ember cavern arena">
-              <img src="assets/images/ember-cavern.png" alt="Fiery cavern environment">
-              <span>Ember Cavern</span>
-            </button>
-          </div>
-        </section>
-
-        <section id="world" class="world section section--dark">
-          <div class="world__copy reveal">
-            <p class="eyebrow">About Spright</p>
-            <h2>Reclaim power from rooms that fight back.</h2>
-            <p>Spright is an atmospheric indie action-platformer starring a flame-headed warrior moving through dangerous biomes, sealed arenas, and boss encounters. The game centers on responsive traversal, melee pressure, crown-based health, coins, blueprint upgrades, and choices that can change how the world reacts.</p>
-            <p>It is built in Godot with a strong focus on cinematic lighting, pixel-forward characters, and punchy room-scale challenges.</p>
-            <a class="button button--primary" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="About CTA">
-              <span class="button__icon">★</span>
-              Wishlist Spright
-            </a>
-          </div>
-          <div class="boss-stack reveal reveal--delay" aria-label="Featured Spright enemies">
-            <img src="assets/images/octoboss.png" alt="Octoboss" class="boss-stack__boss boss-stack__boss--octo">
-            <img src="assets/images/anglerfish.png" alt="Anglerfish" class="boss-stack__boss boss-stack__boss--angler">
-            <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter" class="boss-stack__boss boss-stack__boss--drone">
-          </div>
-        </section>
-
-        <section id="updates" class="updates section" aria-labelledby="updates-title">
-          <div class="section__header reveal">
-            <p class="eyebrow">Latest Updates</p>
-            <h2 id="updates-title">What's changing in Spright.</h2>
-            <p>Recent development notes pulled from the same update log used by the in-game menu.</p>
-          </div>
-
-          <div class="updates-panel reveal reveal--delay" data-updates-panel>
-            <div class="updates-panel__topline" aria-hidden="true"></div>
-            <div class="updates-panel__header">
-              <span>Update Log</span>
-              <time data-updates-date>Updated 2026-05-17</time>
-            </div>
-            <div class="updates-list" data-updates-list aria-live="polite">
-              <article class="update-item">
-                <h3>Update</h3>
-                <p>- Reworked a few frustrating rooms after seeing clips and playtest comments in the DIscord.<br>- Tweaked crown drops and shop prices so upgrades feel less grindy early on.<br>- Cleaned up boss transitions and phase changes to make fights feel smoother overall.</p>
-              </article>
-            </div>
-          </div>
-          <script>
-            (() => {
-              const list = document.querySelector("[data-updates-list]");
-              const date = document.querySelector("[data-updates-date]");
-              if (!list) return;
-
-              const render = (payload) => {
-                const updates = Array.isArray(payload?.updates) ? payload.updates : [];
-                const archive = Array.isArray(payload?.archive) ? payload.archive : [];
-                if (date && payload?.updated) date.textContent = `Updated ${payload.updated}`;
-                if (updates.length === 0) return;
-
-                const makeItem = (update, archived = false) => {
-                  const item = document.createElement("article");
-                  item.className = archived ? "update-item update-item--archived" : "update-item";
-                  const title = document.createElement("h3");
-                  title.textContent = archived && update.updated
-                    ? `${update.title || "Update"} - ${update.updated}`
-                    : update.title || "Update";
-                  const summary = document.createElement("p");
-                  summary.textContent = update.summary || "";
-                  item.append(title, summary);
-                  return item;
-                };
-
-                list.replaceChildren(
-                  ...updates.map((update) => makeItem(update)),
-                  ...archive.map((update) => makeItem(update, true))
-                );
-              };
-
-              fetch("data/updates.json", { cache: "no-cache" })
-                .then((response) => response.ok ? response.json() : null)
-                .then((payload) => { if (payload) render(payload); })
-                .catch(() => {});
-            })();
-          </script>
-        </section>
-
-        <section id="social" class="social section" aria-labelledby="social-title">
-          <div class="section__header reveal">
-            <p class="eyebrow">Follow the game</p>
-            <h2 id="social-title">Keep up with Spright.</h2>
-            <p>Wishlist the game, follow development updates, and join the community channels.</p>
-          </div>
-          <div class="social-grid">
-            <a class="social-card reveal" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Social Steam">
-              <span class="social-card__icon">S</span>
-              <strong>Steam</strong>
-              <span>Wishlist / Play</span>
-            </a>
-            <a class="social-card reveal" href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="youtube" data-analytics-label="YouTube">
-              <span class="social-card__icon">Y</span>
-              <strong>YouTube</strong>
-              <span>@amaantrieshard</span>
-            </a>
-            <a class="social-card reveal" href="https://x.com/studiowallnut" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="x" data-analytics-label="X">
-              <span class="social-card__icon">X</span>
-              <strong>X / Twitter</strong>
-              <span>@studiowallnut</span>
-            </a>
-            <a class="social-card reveal" href="https://discord.gg/HaSDG2GCm" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="discord" data-analytics-label="Discord">
-              <span class="social-card__icon">D</span>
-              <strong>Discord</strong>
-              <span>Join the server</span>
-            </a>
-            <a class="social-card social-card--placeholder reveal" href="https://www.instagram.com/yourhandle/" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="instagram" data-analytics-label="Instagram placeholder">
-              <span class="social-card__icon">I</span>
-              <strong>Instagram</strong>
-              <span>Placeholder link</span>
-            </a>
-            <a class="social-card social-card--placeholder reveal" href="https://www.tiktok.com/@yourhandle" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="tiktok" data-analytics-label="TikTok placeholder">
-              <span class="social-card__icon">T</span>
-              <strong>TikTok</strong>
-              <span>Placeholder link</span>
-            </a>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <div>
-          <img src="assets/images/spright-logo-cropped.png" alt="Spright" class="footer__logo">
-          <p>© <span data-year></span> Spright. All rights reserved.</p>
+    <main id="top">
+      <section class="hero">
+        <div class="hero__art" aria-hidden="true"></div>
+        <div class="hero__vignette" aria-hidden="true"></div>
+        <div class="embers" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="hero-boss" aria-label="Brux cycling through combat animations">
+          <span class="hero-boss__name">Brux</span>
+          <span class="hero-boss__title">The First Ruin</span>
+          <img
+            src="assets/animations/brux-slam/phase1_spearslam_01.webp"
+            alt=""
+            data-frame-animation
+            data-animation-library="brux">
         </div>
-        <nav class="footer__links" aria-label="Footer links">
-          <a href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Footer Steam">Steam</a>
-          <a href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="youtube" data-analytics-label="Footer YouTube">YouTube</a>
-          <a href="https://x.com/studiowallnut" target="_blank" rel="noopener" data-analytics-event="social_click" data-analytics-platform="x" data-analytics-label="Footer X">X</a>
-          <a href="#top" data-analytics-event="nav_click" data-analytics-label="Footer Back to top">Back to top</a>
-        </nav>
-      </footer>
-    </div>
+        <div class="hero__content reveal">
+          <p class="kicker">A brutal action-platformer</p>
+          <img class="hero__logo" src="assets/images/spright-logo-cropped.png" alt="Spright">
+          <p class="hero__line">Your descent begins<br>August 14th.</p>
+          <div class="hero__actions">
+            <a class="button button--fire" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Hero CTA">Wishlist on Steam</a>
+            <a class="button button--ghost" href="#trailer">Watch trailer <span>▶</span></a>
+          </div>
+          <p class="release-message">Full release in August 14th. See you there.</p>
+        </div>
+        <a class="scroll-mark" href="#game" aria-label="Explore the game"><span>Scroll to descend</span></a>
+      </section>
+
+      <section id="game" class="manifesto section">
+        <div class="section-title reveal">
+          <span class="chapter">01 / The Game</span>
+          <h1>Death is only<br><em>the beginning.</em></h1>
+        </div>
+        <div class="manifesto__grid">
+          <div class="manifesto__copy reveal">
+            <p class="lead">Spright is a fast, atmospheric action-platformer built around responsive movement, punishing encounters, and worlds that refuse to stay buried.</p>
+            <p>Dash through sealed ruins. Crack open Spirit Gates. Hunt blueprints. Face towering creatures and learn their patterns before they break you.</p>
+          </div>
+          <div class="combat-art reveal reveal--delay">
+            <img
+              class="combat-art__runner"
+              src="assets/animations/player-run/run_01.webp"
+              alt="Spright running"
+              data-frame-animation
+              data-animation-library="player">
+            <div class="combat-art__ring"></div>
+            <p>Move fast.<br>Strike first.</p>
+          </div>
+        </div>
+        <div class="pillars">
+          <article class="pillar reveal"><span>01</span><h2>Fight</h2><p>Master close-range weapons, deflect attacks, and turn enemy pressure into your opening.</p></article>
+          <article class="pillar reveal"><span>02</span><h2>Explore</h2><p>Cross burning foundries, drowned trenches, ruined halls, and the cold reaches of space.</p></article>
+          <article class="pillar reveal"><span>03</span><h2>Evolve</h2><p>Claim crowns and blueprints to shape your build and survive what waits below.</p></article>
+        </div>
+      </section>
+
+      <section id="worlds" class="worlds">
+        <div class="world-panel world-panel--ember">
+          <div class="world-panel__copy reveal">
+            <span class="chapter">02 / Hostile Worlds</span>
+            <p class="world-panel__number">I</p>
+            <h2>Ember<br>Cavern</h2>
+            <p>Chains, furnace light, and ancient machinery. Every room is built to burn away hesitation.</p>
+          </div>
+        </div>
+        <div class="world-panel world-panel--deep">
+          <div class="world-panel__copy reveal">
+            <p class="world-panel__number">II</p>
+            <h2>The Deep<br>Sea</h2>
+            <p>Descend past the last light. Pressure changes movement, and the dark is never empty.</p>
+          </div>
+        </div>
+        <div class="world-panel world-panel--space">
+          <div class="world-panel__copy reveal">
+            <p class="world-panel__number">III</p>
+            <h2>Into<br>Space</h2>
+            <p>Leave the world behind and fight across broken stations at the edge of the known.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="trailer" class="trailer section">
+        <div class="section-title section-title--center reveal">
+          <span class="chapter">03 / Watch</span>
+          <h2>Enter the world<br><em>of Spright.</em></h2>
+        </div>
+        <div class="trailer__frame reveal" data-analytics-impression="trailer_impression" data-analytics-label="Main trailer">
+          <iframe src="https://www.youtube.com/embed/sj7xewH272k?playsinline=1&controls=1&rel=0&modestbranding=1" title="Spright official trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section id="media" class="media section">
+        <div class="section-title reveal">
+          <span class="chapter">04 / Media</span>
+          <h2>Face what<br><em>waits below.</em></h2>
+        </div>
+        <div class="media-grid">
+          <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/factory-background.png" data-caption="The Factory"><img src="assets/images/factory-background.png" alt="Industrial factory environment"><span>The Factory</span></button>
+          <button class="media-tile reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer"><img src="assets/images/boomboxer-boss.png" alt="Boomboxer boss"><span>Boomboxer</span></button>
+          <button class="media-tile reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter"><img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter boss"><span>Drone Hunter</span></button>
+          <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/townhall-mainhub.png" data-caption="Town Hall"><img src="assets/images/townhall-mainhub.png" alt="Town Hall hub"><span>Town Hall</span></button>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="final-cta__content reveal">
+          <img src="assets/images/spright-logo-cropped.png" alt="Spright">
+          <p>Full release in August 14th. See you there.</p>
+          <a class="button button--fire" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Final CTA">Wishlist on Steam</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span data-year></span> Spright. All rights reserved.</p>
+      <nav>
+        <a href="https://www.youtube.com/@amaantrieshard" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://x.com/studiowallnut" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://discord.gg/HaSDG2GCm" target="_blank" rel="noopener">Discord</a>
+        <a href="#top">Back to top ↑</a>
+      </nav>
+    </footer>
 
     <dialog class="lightbox" data-lightbox-dialog>
-      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close media preview" data-analytics-event="media_close" data-analytics-label="Close media preview">×</button>
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close media preview">×</button>
       <img src="" alt="" data-lightbox-image>
       <p data-lightbox-caption></p>
     </dialog>
-
     <script src="scripts/analytics.js" defer></script>
     <script src="scripts/main.js" defer></script>
   </body>
