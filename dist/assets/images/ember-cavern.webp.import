@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyf60kfhs11yl"
-path="res://.godot/imported/favicon.png-b6c2f6a3cc1ad99d443160c5edf1b816.ctex"
+uid="uid://crfy72a68g00"
+path="res://.godot/imported/ember-cavern.webp-f6fad51bcad59f0e27fc3951dec17f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/dist/favicon.png"
-dest_files=["res://.godot/imported/favicon.png-b6c2f6a3cc1ad99d443160c5edf1b816.ctex"]
+source_file="res://site/dist/assets/images/ember-cavern.webp"
+dest_files=["res://.godot/imported/ember-cavern.webp-f6fad51bcad59f0e27fc3951dec17f69.ctex"]
 
 [params]
 

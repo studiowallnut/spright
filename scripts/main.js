@@ -9,6 +9,8 @@ const lightboxClose = document.querySelector("[data-lightbox-close]");
 const updatesList = document.querySelector("[data-updates-list]");
 const updatesDate = document.querySelector("[data-updates-date]");
 const frameAnimations = document.querySelectorAll("[data-frame-animation]");
+const worldTransmissionVisuals = document.querySelectorAll("[data-world-image]");
+const releaseCountdowns = document.querySelectorAll("[data-release-countdown]");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -78,21 +80,29 @@ const shuffle = (items) => {
   return shuffled;
 };
 
+const preloadedFrameSources = new Set();
+const preloadFrames = (frames) => {
+  for (const source of frames) {
+    if (preloadedFrameSources.has(source)) continue;
+
+    preloadedFrameSources.add(source);
+    const preload = new Image();
+    preload.decoding = "async";
+    preload.src = source;
+  }
+};
+
 for (const image of frameAnimations) {
   const animations = animationLibraries[image.dataset.animationLibrary];
   if (!animations?.length) continue;
 
-  for (const animation of animations) {
-    for (const source of animation.frames) {
-      const preload = new Image();
-      preload.src = source;
-    }
-  }
-
   if (prefersReducedMotion) continue;
 
+  const initialAnimationName = image.dataset.initialAnimation;
+  const initialLoops = Number.parseInt(image.dataset.initialLoops || "", 10);
   let queue = [];
   let currentAnimation = null;
+  let usedInitialAnimation = false;
   let frameIndex = 0;
   let completedLoops = 0;
   let targetLoops = 2;
@@ -101,17 +111,37 @@ for (const image of frameAnimations) {
   let animationRequest = 0;
 
   const chooseAnimation = () => {
-    if (queue.length === 0) {
+    const initialAnimation = !usedInitialAnimation && initialAnimationName
+      ? animations.find((animation) => animation.name === initialAnimationName)
+      : null;
+
+    if (initialAnimation) {
+      currentAnimation = initialAnimation;
+      usedInitialAnimation = true;
+    } else {
+      if (queue.length === 0) {
+        queue = shuffle(animations);
+        if (queue[0] === currentAnimation && queue.length > 1) {
+          [queue[0], queue[1]] = [queue[1], queue[0]];
+        }
+      }
+
+      currentAnimation = queue.shift();
+    }
+
+    if (queue.length === 0 && currentAnimation !== initialAnimation) {
       queue = shuffle(animations);
       if (queue[0] === currentAnimation && queue.length > 1) {
         [queue[0], queue[1]] = [queue[1], queue[0]];
       }
     }
 
-    currentAnimation = queue.shift();
     frameIndex = 0;
     completedLoops = 0;
-    targetLoops = 2 + Math.floor(Math.random() * 2);
+    targetLoops = initialAnimation && Number.isFinite(initialLoops)
+      ? initialLoops
+      : 2 + Math.floor(Math.random() * 2);
+    preloadFrames(currentAnimation.frames);
     image.src = currentAnimation.frames[0];
     image.dataset.currentAnimation = currentAnimation.name;
   };
@@ -150,14 +180,15 @@ for (const image of frameAnimations) {
     animationRequest = window.requestAnimationFrame(animate);
   };
 
-  chooseAnimation();
-
   const playbackObserver = new IntersectionObserver(
     ([entry]) => {
       playing = entry.isIntersecting;
       window.cancelAnimationFrame(animationRequest);
 
       if (playing) {
+        if (!currentAnimation) {
+          chooseAnimation();
+        }
         frameStartedAt = performance.now();
         animationRequest = window.requestAnimationFrame(animate);
       }
@@ -166,6 +197,73 @@ for (const image of frameAnimations) {
   );
 
   playbackObserver.observe(image);
+}
+
+if (worldTransmissionVisuals.length > 0) {
+  const worldVisualObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+
+        const element = entry.target;
+        element.style.setProperty("--world-image", `url("${element.dataset.worldImage}")`);
+        element.classList.add("is-world-loaded");
+        worldVisualObserver.unobserve(element);
+      }
+    },
+    { rootMargin: "650px 0px", threshold: 0.01 }
+  );
+
+  for (const element of worldTransmissionVisuals) {
+    worldVisualObserver.observe(element);
+  }
+}
+
+const twoDigit = (value) => String(value).padStart(2, "0");
+
+for (const countdown of releaseCountdowns) {
+  const target = new Date(countdown.dataset.releaseTarget || "");
+  const daysElement = countdown.querySelector("[data-countdown-days]");
+  const hoursElement = countdown.querySelector("[data-countdown-hours]");
+  const minutesElement = countdown.querySelector("[data-countdown-minutes]");
+  const secondsElement = countdown.querySelector("[data-countdown-seconds]");
+  const messageElement = countdown.querySelector("[data-countdown-message]");
+
+  if (Number.isNaN(target.getTime()) || !daysElement || !hoursElement || !minutesElement || !secondsElement) {
+    continue;
+  }
+
+  const renderCountdown = () => {
+    const remaining = Math.max(0, target.getTime() - Date.now());
+    const totalSeconds = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    daysElement.textContent = String(days);
+    hoursElement.textContent = twoDigit(hours);
+    minutesElement.textContent = twoDigit(minutes);
+    secondsElement.textContent = twoDigit(seconds);
+
+    if (remaining === 0) {
+      countdown.classList.add("is-live");
+      if (messageElement) {
+        messageElement.textContent = "Spright is out now";
+      }
+      return false;
+    }
+
+    return true;
+  };
+
+  if (renderCountdown()) {
+    const countdownInterval = window.setInterval(() => {
+      if (!renderCountdown()) {
+        window.clearInterval(countdownInterval);
+      }
+    }, 1000);
+  }
 }
 
 if (navToggle && nav) {

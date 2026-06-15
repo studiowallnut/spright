@@ -13,12 +13,12 @@
     <meta property="og:image" content="assets/images/main-menu-background.png">
     <link rel="canonical" href="https://sprightgame.com/">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css?v=20260615-1">
+    <link rel="stylesheet" href="styles.css?v=20260615-2">
   </head>
   <body>
     <header class="topbar" data-topbar>
       <a class="brand" href="#top" aria-label="Spright home">
-        <img src="assets/images/spright-logo-cropped.png" alt="Spright">
+        <img src="assets/images/spright-logo-cropped.png" alt="Spright" decoding="async" fetchpriority="high">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span></span><span></span><span></span><span class="sr-only">Menu</span>
@@ -43,16 +43,30 @@
           <img
             src="assets/animations/brux-slam/phase1_spearslam_01.webp"
             alt=""
+            decoding="async"
+            fetchpriority="high"
             data-frame-animation
+            data-initial-animation="phase-one-slam"
+            data-initial-loops="4"
             data-animation-library="brux">
         </div>
         <div class="hero__content reveal">
           <p class="kicker">A brutal action-platformer</p>
-          <img class="hero__logo" src="assets/images/spright-logo-cropped.png" alt="Spright">
+          <img class="hero__logo" src="assets/images/spright-logo-cropped.png" alt="Spright" decoding="async" fetchpriority="high">
           <p class="hero__line">Your descent begins<br>August 14th.</p>
           <div class="hero__actions">
             <a class="button button--fire" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Hero CTA">Wishlist on Steam</a>
             <a class="button button--ghost" href="#trailer">Watch trailer <span>▶</span></a>
+          </div>
+          <div class="release-countdown" data-release-countdown data-release-target="2026-08-14T15:00:00+01:00" aria-label="Countdown to Spright release">
+            <p class="release-countdown__eyebrow">Debut countdown</p>
+            <div class="release-countdown__grid" aria-live="polite">
+              <span><strong data-countdown-days>--</strong><small>Days</small></span>
+              <span><strong data-countdown-hours>--</strong><small>Hours</small></span>
+              <span><strong data-countdown-minutes>--</strong><small>Minutes</small></span>
+              <span><strong data-countdown-seconds>--</strong><small>Seconds</small></span>
+            </div>
+            <p class="release-countdown__date" data-countdown-message>Unlocks August 14 · 3:00 PM UK time</p>
           </div>
           <p class="release-message">Full release in August 14th. See you there.</p>
         </div>
@@ -83,6 +97,8 @@
             class="runner-stage__sprite"
             src="assets/animations/player-run/run_01.webp"
             alt="Spright running"
+            loading="lazy"
+            decoding="async"
             data-frame-animation
             data-animation-library="player">
           <p class="runner-stage__status"><span>Run state</span> Active</p>
@@ -113,11 +129,11 @@
               <p>Chains, furnace light, and buried machinery. The recording ends long before the ruins do.</p>
               <div class="world-signal__scope"><i></i> Fragment recovered / Region incomplete</div>
             </div>
-            <div class="world-signal__visual" aria-label="Fragmented transmission from Ember Cavern">
+            <div class="world-signal__visual" data-world-image="assets/images/ember-cavern.webp" aria-label="Fragmented transmission from Ember Cavern">
               <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
-              <img class="world-signal__artifact" src="assets/images/active-gate.png" alt="Active gate">
+              <img class="world-signal__artifact" src="assets/images/active-gate.png" alt="Active gate" loading="lazy" decoding="async">
               <span class="world-signal__readout">Furnace route // visual unstable</span>
             </div>
           </article>
@@ -129,11 +145,11 @@
               <p>Past the last light, pressure closes in. Every flicker suggests another path, or another mouth.</p>
               <div class="world-signal__scope"><i></i> Fragment recovered / Depth unknown</div>
             </div>
-            <div class="world-signal__visual" aria-label="Fragmented transmission from the Deep Sea">
+            <div class="world-signal__visual" data-world-image="assets/images/deep-sea-background.webp" aria-label="Fragmented transmission from the Deep Sea">
               <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
-              <img class="world-signal__artifact" src="assets/images/anglerfish.png" alt="Anglerfish enemy">
+              <img class="world-signal__artifact" src="assets/images/anglerfish.png" alt="Anglerfish enemy" loading="lazy" decoding="async">
               <span class="world-signal__readout">Trench signal // movement detected</span>
             </div>
           </article>
@@ -145,11 +161,11 @@
               <p>Beyond the atmosphere, the route fractures across stations, rock, and open dark.</p>
               <div class="world-signal__scope"><i></i> Fragment recovered / Destination unknown</div>
             </div>
-            <div class="world-signal__visual" aria-label="Fragmented transmission from space">
+            <div class="world-signal__visual" data-world-image="assets/images/into-space.webp" aria-label="Fragmented transmission from space">
               <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
               <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
-              <img class="world-signal__artifact" src="assets/images/sky-elevator.png" alt="Sky elevator">
+              <img class="world-signal__artifact" src="assets/images/sky-elevator.png" alt="Sky elevator" loading="lazy" decoding="async">
               <span class="world-signal__readout">Orbital route // endpoint missing</span>
             </div>
           </article>
@@ -164,17 +180,17 @@
         <div class="relic-grid">
           <article class="relic-card relic-card--weapon reveal">
             <div class="relic-card__number">A / 01</div>
-            <img src="assets/images/sword.png" alt="Ornate sword">
+            <img src="assets/images/sword.png" alt="Ornate sword" loading="lazy" decoding="async">
             <div><h3>Weapons</h3><p>Different reach, timing, and risk. Pick the tool that fits the room.</p></div>
           </article>
           <article class="relic-card relic-card--blueprint reveal">
             <div class="relic-card__number">B / 02</div>
-            <img src="assets/images/blueprint.png" alt="Crown blueprint">
+            <img src="assets/images/blueprint.png" alt="Crown blueprint" loading="lazy" decoding="async">
             <div><h3>Blueprints</h3><p>Recover lost designs and turn exploration into new possibilities.</p></div>
           </article>
           <article class="relic-card relic-card--crown reveal">
             <div class="relic-card__number">C / 03</div>
-            <img src="assets/images/crown-coin.png" alt="Golden crown coin">
+            <img src="assets/images/crown-coin.png" alt="Golden crown coin" loading="lazy" decoding="async">
             <div><h3>Crowns</h3><p>Claim what the ruins protect and carry its power into the next fight.</p></div>
           </article>
         </div>
@@ -191,17 +207,17 @@
         <div class="dossier-grid">
           <button class="dossier dossier--octo reveal" type="button" data-lightbox="assets/images/octoboss.png" data-caption="Octoboss">
             <span class="dossier__code">Abyss / 01</span>
-            <img src="assets/images/octoboss.png" alt="Octoboss">
+            <img src="assets/images/octoboss.png" alt="Octoboss" loading="lazy" decoding="async">
             <span class="dossier__name">Octoboss <small>Pressure Sovereign</small></span>
           </button>
           <button class="dossier dossier--boomboxer reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer">
             <span class="dossier__code">Factory / 07</span>
-            <img src="assets/images/boomboxer-boss.png" alt="Boomboxer">
+            <img src="assets/images/boomboxer-boss.png" alt="Boomboxer" loading="lazy" decoding="async">
             <span class="dossier__name">Boomboxer <small>Heavy Rhythm Unit</small></span>
           </button>
           <button class="dossier dossier--hunter reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter">
             <span class="dossier__code">Factory / 12</span>
-            <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter">
+            <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter" loading="lazy" decoding="async">
             <span class="dossier__name">Drone Hunter <small>Lock-on Predator</small></span>
           </button>
         </div>
@@ -233,7 +249,7 @@
 
       <section class="final-cta">
         <div class="final-cta__content reveal">
-          <img src="assets/images/spright-logo-cropped.png" alt="Spright">
+          <img src="assets/images/spright-logo-cropped.png" alt="Spright" loading="lazy" decoding="async">
           <p>Descend August 14th.</p>
           <a class="button button--fire" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Final CTA">Wishlist on Steam</a>
         </div>
@@ -252,10 +268,10 @@
 
     <dialog class="lightbox" data-lightbox-dialog>
       <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close media preview">×</button>
-      <img src="" alt="" data-lightbox-image>
+      <img src="" alt="" decoding="async" data-lightbox-image>
       <p data-lightbox-caption></p>
     </dialog>
-    <script src="scripts/analytics.js?v=20260615-1" defer></script>
-    <script src="scripts/main.js?v=20260615-1" defer></script>
+    <script src="scripts/analytics.js?v=20260615-2" defer></script>
+    <script src="scripts/main.js?v=20260615-2" defer></script>
   </body>
 </html>

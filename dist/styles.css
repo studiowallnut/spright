@@ -29,7 +29,7 @@ body::before {
   z-index: 100;
   pointer-events: none;
   opacity: .13;
-  background-image: url("assets/images/particle.png");
+  background-image: url("assets/images/particle-small.webp");
   background-size: 420px;
   mix-blend-mode: screen;
 }
@@ -80,7 +80,7 @@ button { color: inherit; font: inherit; }
   position: absolute;
   inset: 0;
   z-index: -3;
-  background: url("assets/images/main-menu-background.png") 55% center / cover no-repeat;
+  background: url("assets/images/main-menu-background.webp") 55% center / cover no-repeat;
   animation: heroIn 2s ease-out both;
 }
 .hero__vignette {
@@ -184,6 +184,82 @@ button { color: inherit; font: inherit; }
   box-shadow: 0 0 34px rgba(240,90,31,.24), inset 0 1px rgba(255,255,255,.32);
 }
 .button--ghost { background: rgba(7,6,4,.58); backdrop-filter: blur(8px); }
+.release-countdown {
+  width: min(530px, 100%);
+  margin-top: 18px;
+  padding: 16px 17px 14px;
+  border: 1px solid rgba(229,173,81,.38);
+  background:
+    linear-gradient(135deg, rgba(240,90,31,.16), transparent 42%),
+    rgba(7,6,4,.68);
+  box-shadow: 0 18px 44px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+  clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
+}
+.release-countdown__eyebrow,
+.release-countdown__date {
+  margin: 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.release-countdown__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: .72rem;
+}
+.release-countdown__eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 16px var(--orange);
+}
+.release-countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 11px;
+}
+.release-countdown__grid span {
+  min-width: 0;
+  padding: 9px 8px 8px;
+  border: 1px solid rgba(241,234,220,.12);
+  background: rgba(0,0,0,.34);
+  text-align: center;
+}
+.release-countdown__grid strong {
+  display: block;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(1.65rem, 3.1vw, 2.45rem);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+}
+.release-countdown__grid small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.release-countdown__date {
+  margin-top: 10px;
+  color: #d9cbb8;
+  font-size: .7rem;
+}
+.release-countdown.is-live {
+  border-color: rgba(240,90,31,.82);
+  box-shadow: 0 0 42px rgba(240,90,31,.24), inset 0 1px rgba(255,255,255,.12);
+}
 .release-message {
   margin: 22px 0 0;
   color: #d9cbb8;
@@ -483,7 +559,6 @@ button { color: inherit; font: inherit; }
   box-shadow: 0 0 12px var(--orange);
 }
 .world-signal__visual {
-  --world-image: url("assets/images/ember-cavern.png");
   --signal-color: #f05a1f;
   position: relative;
   min-height: 590px;
@@ -518,8 +593,8 @@ button { color: inherit; font: inherit; }
     linear-gradient(90deg, rgba(3,3,3,.5), transparent 18% 82%, rgba(3,3,3,.65)),
     linear-gradient(180deg, rgba(3,3,3,.3), transparent 45%, rgba(3,3,3,.7));
 }
-.world-signal--deep .world-signal__visual { --world-image: url("assets/images/deep-sea-background.png"); --signal-color: #14cbe4; }
-.world-signal--space .world-signal__visual { --world-image: url("assets/images/into-space.png"); --signal-color: #8d8cff; }
+.world-signal--deep .world-signal__visual { --signal-color: #14cbe4; }
+.world-signal--space .world-signal__visual { --signal-color: #8d8cff; }
 .world-fragment {
   position: absolute;
   overflow: hidden;
@@ -529,6 +604,9 @@ button { color: inherit; font: inherit; }
 }
 .world-fragment--a {
   inset: 7% 25% 17% 5%;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--signal-color) 18%, #070707), #050505 70%);
+}
+.world-signal__visual.is-world-loaded .world-fragment--a {
   background: var(--world-image) center / cover no-repeat;
 }
 .world-fragment--b,
@@ -802,7 +880,7 @@ button { color: inherit; font: inherit; }
   text-align: center;
   background:
     linear-gradient(rgba(7,6,4,.28), #070604),
-    url("assets/images/main-menu-background.png") center / cover;
+    url("assets/images/main-menu-background.webp") center / cover;
 }
 .final-cta::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, transparent, rgba(0,0,0,.72)); }
 .final-cta__content { position: relative; z-index: 2; }
@@ -849,6 +927,7 @@ button { color: inherit; font: inherit; }
   .hero__content { padding: 0; text-align: center; }
   .hero__logo { width: min(520px, 88vw); margin-inline: auto; }
   .hero__actions { justify-content: center; }
+  .release-countdown { margin-inline: auto; }
   .scroll-mark { display: none; }
   .descent__intro { grid-template-columns: 1fr; align-items: start; }
   .descent__copy { max-width: 620px; }
@@ -881,6 +960,22 @@ button { color: inherit; font: inherit; }
   .hero__art { background-position: 59% center; }
   .hero__line { font-size: 2.4rem; }
   .hero__actions { flex-direction: column; align-items: stretch; }
+  .release-countdown {
+    padding: 14px 12px 13px;
+  }
+  .release-countdown__grid {
+    gap: 5px;
+  }
+  .release-countdown__grid span {
+    padding-inline: 4px;
+  }
+  .release-countdown__grid strong {
+    font-size: 1.8rem;
+  }
+  .release-countdown__grid small {
+    font-size: .55rem;
+    letter-spacing: .11em;
+  }
   .release-message { font-size: 1.08rem; }
   .section { padding-block: 82px; }
   .section-title h1, .section-title h2, .atlas-heading h2 { font-size: 3.7rem; }

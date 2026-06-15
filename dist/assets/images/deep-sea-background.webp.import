@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyf60kfhs11yl"
-path="res://.godot/imported/favicon.png-b6c2f6a3cc1ad99d443160c5edf1b816.ctex"
+uid="uid://snlh653gxem7"
+path="res://.godot/imported/deep-sea-background.webp-80b05458f95a76316ca9418ac26f3412.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/dist/favicon.png"
-dest_files=["res://.godot/imported/favicon.png-b6c2f6a3cc1ad99d443160c5edf1b816.ctex"]
+source_file="res://site/dist/assets/images/deep-sea-background.webp"
+dest_files=["res://.godot/imported/deep-sea-background.webp-80b05458f95a76316ca9418ac26f3412.ctex"]
 
 [params]
 
