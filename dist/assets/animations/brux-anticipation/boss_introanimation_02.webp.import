@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkitsw7oo1a6x"
-path="res://.godot/imported/boss_introanimation_02.webp-1e576c0f6dee60afc2d4f42ae7d369c7.ctex"
+path="res://.godot/imported/boss_introanimation_02.webp-630d3dc83f00a7c8d07539d14a8fb858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-anticipation/boss_introanimation_02.webp"
-dest_files=["res://.godot/imported/boss_introanimation_02.webp-1e576c0f6dee60afc2d4f42ae7d369c7.ctex"]
+source_file="res://site/dist/assets/animations/brux-anticipation/boss_introanimation_02.webp"
+dest_files=["res://.godot/imported/boss_introanimation_02.webp-630d3dc83f00a7c8d07539d14a8fb858.ctex"]
 
 [params]
 

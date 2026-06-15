@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byyrt6v2v6dup"
-path="res://.godot/imported/run_06.webp-b67bc41bf051f7fd5d2ea927206e49e6.ctex"
+path="res://.godot/imported/run_06.webp-a8db4def2b5c5813959ed2bf2188d931.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/player-run/run_06.webp"
-dest_files=["res://.godot/imported/run_06.webp-b67bc41bf051f7fd5d2ea927206e49e6.ctex"]
+source_file="res://site/dist/assets/animations/player-run/run_06.webp"
+dest_files=["res://.godot/imported/run_06.webp-a8db4def2b5c5813959ed2bf2188d931.ctex"]
 
 [params]
 

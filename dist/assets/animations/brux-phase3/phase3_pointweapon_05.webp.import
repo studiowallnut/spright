@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1pnob8pkta2f"
-path="res://.godot/imported/phase3_pointweapon_05.webp-c1d8290ea23a88e41138b44e120ab64c.ctex"
+path="res://.godot/imported/phase3_pointweapon_05.webp-e240a913fb31a43ba9ce0ed6d63a18d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-phase3/phase3_pointweapon_05.webp"
-dest_files=["res://.godot/imported/phase3_pointweapon_05.webp-c1d8290ea23a88e41138b44e120ab64c.ctex"]
+source_file="res://site/dist/assets/animations/brux-phase3/phase3_pointweapon_05.webp"
+dest_files=["res://.godot/imported/phase3_pointweapon_05.webp-e240a913fb31a43ba9ce0ed6d63a18d1.ctex"]
 
 [params]
 

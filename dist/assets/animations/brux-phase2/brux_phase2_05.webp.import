@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b26k52trn3awg"
-path="res://.godot/imported/brux_phase2_05.webp-c40efdd6605a86e00b5fdba5107e973b.ctex"
+path="res://.godot/imported/brux_phase2_05.webp-5a626f76b91a864c8f618a6f84250b5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-phase2/brux_phase2_05.webp"
-dest_files=["res://.godot/imported/brux_phase2_05.webp-c40efdd6605a86e00b5fdba5107e973b.ctex"]
+source_file="res://site/dist/assets/animations/brux-phase2/brux_phase2_05.webp"
+dest_files=["res://.godot/imported/brux_phase2_05.webp-5a626f76b91a864c8f618a6f84250b5e.ctex"]
 
 [params]
 

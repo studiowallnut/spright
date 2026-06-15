@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xsyl6586gjkk"
-path="res://.godot/imported/phase1_spearslam_01.webp-208668a1d8697332a4790d3b9c1e337d.ctex"
+path="res://.godot/imported/phase1_spearslam_01.webp-0fad69a80555f871099c764931991e2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-slam/phase1_spearslam_01.webp"
-dest_files=["res://.godot/imported/phase1_spearslam_01.webp-208668a1d8697332a4790d3b9c1e337d.ctex"]
+source_file="res://site/dist/assets/animations/brux-slam/phase1_spearslam_01.webp"
+dest_files=["res://.godot/imported/phase1_spearslam_01.webp-0fad69a80555f871099c764931991e2c.ctex"]
 
 [params]
 

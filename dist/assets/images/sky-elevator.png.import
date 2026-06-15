@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ukah0fww02ix"
-path="res://.godot/imported/sky-elevator.png-f428810fda91dfb41859714ac5c7c654.ctex"
+path="res://.godot/imported/sky-elevator.png-ff7f8d5756e3361efde87b8041c2d1c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/images/sky-elevator.png"
-dest_files=["res://.godot/imported/sky-elevator.png-f428810fda91dfb41859714ac5c7c654.ctex"]
+source_file="res://site/dist/assets/images/sky-elevator.png"
+dest_files=["res://.godot/imported/sky-elevator.png-ff7f8d5756e3361efde87b8041c2d1c3.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rswt7ye4jd0o"
-path="res://.godot/imported/melee_spearspinattack_05.webp-34e113f4ba71a94d55102e37b21ceb30.ctex"
+path="res://.godot/imported/melee_spearspinattack_05.webp-567744cd2d6091b8662ea4d998c566c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-melee/melee_spearspinattack_05.webp"
-dest_files=["res://.godot/imported/melee_spearspinattack_05.webp-34e113f4ba71a94d55102e37b21ceb30.ctex"]
+source_file="res://site/dist/assets/animations/brux-melee/melee_spearspinattack_05.webp"
+dest_files=["res://.godot/imported/melee_spearspinattack_05.webp-567744cd2d6091b8662ea4d998c566c6.ctex"]
 
 [params]
 

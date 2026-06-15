@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvuvn3stj2ni6"
-path="res://.godot/imported/brux_idleframe_01.webp-51858ded4accdcb0f5ee73dabec0da50.ctex"
+path="res://.godot/imported/brux_idleframe_01.webp-a18059abad455812ae53fd56e0aa7657.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-idle/brux_idleframe_01.webp"
-dest_files=["res://.godot/imported/brux_idleframe_01.webp-51858ded4accdcb0f5ee73dabec0da50.ctex"]
+source_file="res://site/dist/assets/animations/brux-idle/brux_idleframe_01.webp"
+dest_files=["res://.godot/imported/brux_idleframe_01.webp-a18059abad455812ae53fd56e0aa7657.ctex"]
 
 [params]
 

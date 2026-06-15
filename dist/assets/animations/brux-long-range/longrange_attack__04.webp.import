@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7hpsxfkawlq3"
-path="res://.godot/imported/longrange_attack__04.webp-592db49256ea2b0507d7f70aa4cbfe13.ctex"
+path="res://.godot/imported/longrange_attack__04.webp-3e7059f791932d3a16f8e64206794c61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://site/assets/animations/brux-long-range/longrange_attack__04.webp"
-dest_files=["res://.godot/imported/longrange_attack__04.webp-592db49256ea2b0507d7f70aa4cbfe13.ctex"]
+source_file="res://site/dist/assets/animations/brux-long-range/longrange_attack__04.webp"
+dest_files=["res://.godot/imported/longrange_attack__04.webp-3e7059f791932d3a16f8e64206794c61.ctex"]
 
 [params]
 

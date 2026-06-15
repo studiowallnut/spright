@@ -13,7 +13,7 @@
     <meta property="og:image" content="assets/images/main-menu-background.png">
     <link rel="canonical" href="https://sprightgame.com/">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css?v=20260608-2">
+    <link rel="stylesheet" href="styles.css?v=20260615-1">
   </head>
   <body>
     <header class="topbar" data-topbar>
@@ -59,86 +59,182 @@
         <a class="scroll-mark" href="#game" aria-label="Explore the game"><span>Scroll to descend</span></a>
       </section>
 
-      <section id="game" class="manifesto section">
-        <div class="section-title reveal">
-          <span class="chapter">01 / The Game</span>
-          <h1>Death is only<br><em>the beginning.</em></h1>
-        </div>
-        <div class="manifesto__grid">
-          <div class="manifesto__copy reveal">
-            <p class="lead">Spright is a fast, atmospheric action-platformer built around responsive movement, punishing encounters, and worlds that refuse to stay buried.</p>
-            <p>Dash through sealed ruins. Crack open Spirit Gates. Hunt blueprints. Face towering creatures and learn their patterns before they break you.</p>
+      <section id="game" class="descent section">
+        <div class="descent__ghost" aria-hidden="true">DESCEND</div>
+        <div class="descent__intro">
+          <div class="section-title reveal">
+            <span class="chapter">01 / The Descent</span>
+            <h1>Built for momentum.<br><em>Forged for pressure.</em></h1>
           </div>
-          <div class="combat-art reveal reveal--delay">
-            <img
-              class="combat-art__runner"
-              src="assets/animations/player-run/run_01.webp"
-              alt="Spright running"
-              data-frame-animation
-              data-animation-library="player">
-            <div class="combat-art__ring"></div>
-            <p>Move fast.<br>Strike first.</p>
+          <div class="descent__copy reveal reveal--delay">
+            <p class="lead">Spright is a fast, atmospheric action-platformer where movement is survival and every room asks you to commit.</p>
+            <p>Dash through sealed ruins, break enemy patterns, hunt blueprints, and push deeper into a world that keeps changing the rules.</p>
           </div>
         </div>
-        <div class="pillars">
-          <article class="pillar reveal"><span>01</span><h2>Fight</h2><p>Master close-range weapons, deflect attacks, and turn enemy pressure into your opening.</p></article>
-          <article class="pillar reveal"><span>02</span><h2>Explore</h2><p>Cross burning foundries, drowned trenches, ruined halls, and the cold reaches of space.</p></article>
-          <article class="pillar reveal"><span>03</span><h2>Evolve</h2><p>Claim crowns and blueprints to shape your build and survive what waits below.</p></article>
+
+        <div class="runner-stage reveal">
+          <div class="runner-stage__signal" aria-hidden="true">
+            <span>Velocity</span>
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p class="runner-stage__callout">Never stop<br><strong>moving.</strong></p>
+          <div class="runner-stage__orbit" aria-hidden="true"></div>
+          <img
+            class="runner-stage__sprite"
+            src="assets/animations/player-run/run_01.webp"
+            alt="Spright running"
+            data-frame-animation
+            data-animation-library="player">
+          <p class="runner-stage__status"><span>Run state</span> Active</p>
+        </div>
+
+        <div class="descent-loop">
+          <article class="loop-step reveal"><span>01</span><div><h2>Move</h2><p>Chain jumps, dashes, and tight landings into one continuous line.</p></div></article>
+          <article class="loop-step reveal"><span>02</span><div><h2>Break</h2><p>Read the room, crack the pattern, and turn pressure into an opening.</p></div></article>
+          <article class="loop-step reveal"><span>03</span><div><h2>Claim</h2><p>Recover crowns and blueprints that change how the next descent plays.</p></div></article>
         </div>
       </section>
 
-      <section id="worlds" class="worlds">
-        <div class="world-panel world-panel--ember">
-          <div class="world-panel__copy reveal">
-            <span class="chapter">02 / Hostile Worlds</span>
-            <p class="world-panel__number">I</p>
-            <h2>Ember<br>Cavern</h2>
-            <p>Chains, furnace light, and ancient machinery. Every room is built to burn away hesitation.</p>
+      <section id="worlds" class="world-atlas section">
+        <div class="atlas-heading reveal">
+          <span class="chapter">02 / The World Below</span>
+          <div>
+            <h2>Three signals.<br><em>Worlds beyond the frame.</em></h2>
+            <p>These are recovered glimpses, not maps. Each transmission hides a larger biome full of routes, rooms, and threats still waiting beyond the signal.</p>
           </div>
         </div>
-        <div class="world-panel world-panel--deep">
-          <div class="world-panel__copy reveal">
-            <p class="world-panel__number">II</p>
-            <h2>The Deep<br>Sea</h2>
-            <p>Descend past the last light. Pressure changes movement, and the dark is never empty.</p>
-          </div>
+
+        <div class="world-transmissions">
+          <article class="world-signal world-signal--ember reveal">
+            <div class="world-signal__copy">
+              <span class="world-signal__roman">I</span>
+              <span class="world-signal__status">Signal 01 / Heat critical</span>
+              <h3>Ember<br>Cavern</h3>
+              <p>Chains, furnace light, and buried machinery. The recording ends long before the ruins do.</p>
+              <div class="world-signal__scope"><i></i> Fragment recovered / Region incomplete</div>
+            </div>
+            <div class="world-signal__visual" aria-label="Fragmented transmission from Ember Cavern">
+              <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
+              <img class="world-signal__artifact" src="assets/images/active-gate.png" alt="Active gate">
+              <span class="world-signal__readout">Furnace route // visual unstable</span>
+            </div>
+          </article>
+          <article class="world-signal world-signal--deep reveal">
+            <div class="world-signal__copy">
+              <span class="world-signal__roman">II</span>
+              <span class="world-signal__status">Signal 02 / Light failing</span>
+              <h3>The Deep<br>Sea</h3>
+              <p>Past the last light, pressure closes in. Every flicker suggests another path, or another mouth.</p>
+              <div class="world-signal__scope"><i></i> Fragment recovered / Depth unknown</div>
+            </div>
+            <div class="world-signal__visual" aria-label="Fragmented transmission from the Deep Sea">
+              <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
+              <img class="world-signal__artifact" src="assets/images/anglerfish.png" alt="Anglerfish enemy">
+              <span class="world-signal__readout">Trench signal // movement detected</span>
+            </div>
+          </article>
+          <article class="world-signal world-signal--space reveal">
+            <div class="world-signal__copy">
+              <span class="world-signal__roman">III</span>
+              <span class="world-signal__status">Signal 03 / Range lost</span>
+              <h3>Into<br>Space</h3>
+              <p>Beyond the atmosphere, the route fractures across stations, rock, and open dark.</p>
+              <div class="world-signal__scope"><i></i> Fragment recovered / Destination unknown</div>
+            </div>
+            <div class="world-signal__visual" aria-label="Fragmented transmission from space">
+              <div class="world-fragment world-fragment--a" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--b" aria-hidden="true"></div>
+              <div class="world-fragment world-fragment--c" aria-hidden="true"></div>
+              <img class="world-signal__artifact" src="assets/images/sky-elevator.png" alt="Sky elevator">
+              <span class="world-signal__readout">Orbital route // endpoint missing</span>
+            </div>
+          </article>
         </div>
-        <div class="world-panel world-panel--space">
-          <div class="world-panel__copy reveal">
-            <p class="world-panel__number">III</p>
-            <h2>Into<br>Space</h2>
-            <p>Leave the world behind and fight across broken stations at the edge of the known.</p>
+      </section>
+
+      <section class="relics section">
+        <div class="section-title reveal">
+          <span class="chapter">03 / Shape The Run</span>
+          <h2>Find the answer.<br><em>Build the weapon.</em></h2>
+        </div>
+        <div class="relic-grid">
+          <article class="relic-card relic-card--weapon reveal">
+            <div class="relic-card__number">A / 01</div>
+            <img src="assets/images/sword.png" alt="Ornate sword">
+            <div><h3>Weapons</h3><p>Different reach, timing, and risk. Pick the tool that fits the room.</p></div>
+          </article>
+          <article class="relic-card relic-card--blueprint reveal">
+            <div class="relic-card__number">B / 02</div>
+            <img src="assets/images/blueprint.png" alt="Crown blueprint">
+            <div><h3>Blueprints</h3><p>Recover lost designs and turn exploration into new possibilities.</p></div>
+          </article>
+          <article class="relic-card relic-card--crown reveal">
+            <div class="relic-card__number">C / 03</div>
+            <img src="assets/images/crown-coin.png" alt="Golden crown coin">
+            <div><h3>Crowns</h3><p>Claim what the ruins protect and carry its power into the next fight.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="media" class="dossiers section">
+        <div class="dossiers__heading reveal">
+          <div class="section-title">
+            <span class="chapter">04 / Encounter Files</span>
+            <h2>Every depth<br><em>has a name.</em></h2>
           </div>
+          <p>Study the silhouette. Learn the tell. Then get close enough to make it matter.</p>
+        </div>
+        <div class="dossier-grid">
+          <button class="dossier dossier--octo reveal" type="button" data-lightbox="assets/images/octoboss.png" data-caption="Octoboss">
+            <span class="dossier__code">Abyss / 01</span>
+            <img src="assets/images/octoboss.png" alt="Octoboss">
+            <span class="dossier__name">Octoboss <small>Pressure Sovereign</small></span>
+          </button>
+          <button class="dossier dossier--boomboxer reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer">
+            <span class="dossier__code">Factory / 07</span>
+            <img src="assets/images/boomboxer-boss.png" alt="Boomboxer">
+            <span class="dossier__name">Boomboxer <small>Heavy Rhythm Unit</small></span>
+          </button>
+          <button class="dossier dossier--hunter reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter">
+            <span class="dossier__code">Factory / 12</span>
+            <img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter">
+            <span class="dossier__name">Drone Hunter <small>Lock-on Predator</small></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="field-log section">
+        <div class="field-log__heading reveal">
+          <span class="chapter">05 / Field Log</span>
+          <h2>Still being<br><em>forged.</em></h2>
+          <p data-updates-date>Latest development transmission</p>
+        </div>
+        <div class="field-log__entries reveal reveal--delay" data-updates-list>
+          <article class="update-item update-item--loading"><h3>Loading transmission</h3><p>Checking the latest build notes.</p></article>
         </div>
       </section>
 
       <section id="trailer" class="trailer section">
-        <div class="section-title section-title--center reveal">
-          <span class="chapter">03 / Watch</span>
-          <h2>Enter the world<br><em>of Spright.</em></h2>
+        <div class="trailer__heading reveal">
+          <div class="section-title">
+            <span class="chapter">06 / Official Trailer</span>
+            <h2>See what waits<br><em>below.</em></h2>
+          </div>
+          <a class="trailer__external" href="https://youtu.be/TpS6QRmv5Ck" target="_blank" rel="noopener">Watch on YouTube <span>↗</span></a>
         </div>
         <div class="trailer__frame reveal" data-analytics-impression="trailer_impression" data-analytics-label="Main trailer">
-          <iframe src="https://www.youtube.com/embed/sj7xewH272k?playsinline=1&controls=1&rel=0&modestbranding=1" title="Spright official trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </section>
-
-      <section id="media" class="media section">
-        <div class="section-title reveal">
-          <span class="chapter">04 / Media</span>
-          <h2>Face what<br><em>waits below.</em></h2>
-        </div>
-        <div class="media-grid">
-          <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/factory-background.png" data-caption="The Factory"><img src="assets/images/factory-background.png" alt="Industrial factory environment"><span>The Factory</span></button>
-          <button class="media-tile reveal" type="button" data-lightbox="assets/images/boomboxer-boss.png" data-caption="Boomboxer"><img src="assets/images/boomboxer-boss.png" alt="Boomboxer boss"><span>Boomboxer</span></button>
-          <button class="media-tile reveal" type="button" data-lightbox="assets/images/drone-hunter-boss.png" data-caption="Drone Hunter"><img src="assets/images/drone-hunter-boss.png" alt="Drone Hunter boss"><span>Drone Hunter</span></button>
-          <button class="media-tile media-tile--wide reveal" type="button" data-lightbox="assets/images/townhall-mainhub.png" data-caption="Town Hall"><img src="assets/images/townhall-mainhub.png" alt="Town Hall hub"><span>Town Hall</span></button>
+          <iframe src="https://www.youtube.com/embed/TpS6QRmv5Ck?playsinline=1&controls=1&rel=0&modestbranding=1" title="Spright official trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </section>
 
       <section class="final-cta">
         <div class="final-cta__content reveal">
           <img src="assets/images/spright-logo-cropped.png" alt="Spright">
-          <p>Full release in August 14th. See you there.</p>
+          <p>Descend August 14th.</p>
           <a class="button button--fire" href="https://store.steampowered.com/app/4484760/Spright/" target="_blank" rel="noopener" data-analytics-event="steam_wishlist_click" data-analytics-label="Final CTA">Wishlist on Steam</a>
         </div>
       </section>
@@ -159,7 +255,7 @@
       <img src="" alt="" data-lightbox-image>
       <p data-lightbox-caption></p>
     </dialog>
-    <script src="scripts/analytics.js?v=20260608-2" defer></script>
-    <script src="scripts/main.js?v=20260608-2" defer></script>
+    <script src="scripts/analytics.js?v=20260615-1" defer></script>
+    <script src="scripts/main.js?v=20260615-1" defer></script>
   </body>
 </html>
