@@ -247,7 +247,9 @@
           <p>Join the Studio Wallnut update list for Spright news, or open a direct conversation about investment, press, partnerships, and everything else.</p>
           <a href="mailto:tingyamaany@gmail.com">tingyamaany@gmail.com ↗</a>
         </div>
-        <form class="contact-form reveal reveal--delay" action="https://sprightgame.com/" method="post" data-contact-form>
+        <form class="contact-form reveal reveal--delay" action="https://formsubmit.co/ajax/tingyamaany@gmail.com" method="post" data-contact-form>
+          <input class="contact-form__honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_template" value="table">
           <label>
             <span>Your name</span>
             <input type="text" name="name" autocomplete="name" required placeholder="Name">
@@ -274,8 +276,8 @@
             <span>Also add me to the Studio Wallnut newsletter.</span>
           </label>
           <div class="contact-form__submit contact-form__wide">
-            <button class="button button--gold" type="submit"><span>Prepare email</span><b>↗</b></button>
-            <p role="status" data-contact-status>This opens an addressed email in your mail app. Nothing is sent until you approve it.</p>
+            <button class="button button--gold" type="submit"><span data-contact-submit-label>Send message</span><b>↗</b></button>
+            <p role="status" aria-live="polite" data-contact-status>Your details are delivered to Studio Wallnut without opening an email app.</p>
           </div>
         </form>
       </section>

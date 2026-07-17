@@ -655,6 +655,8 @@ lightbox?.addEventListener("click", (event) => {
 
 const contactForm = $("[data-contact-form]");
 const contactStatus = $("[data-contact-status]");
+const contactSubmit = $("button[type='submit']", contactForm);
+const contactSubmitLabel = $("[data-contact-submit-label]", contactForm);
 
 if (contactForm && crownWidget) {
   const contactSection = contactForm.closest(".contact");
@@ -664,35 +666,55 @@ if (contactForm && crownWidget) {
   if (contactSection) contactObserver.observe(contactSection);
 }
 
-contactForm?.addEventListener("submit", (event) => {
+contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!contactForm.reportValidity()) return;
 
   const data = new FormData(contactForm);
-  const name = String(data.get("name") || "").trim();
   const email = String(data.get("email") || "").trim();
   const topic = String(data.get("topic") || "General question");
-  const message = String(data.get("message") || "").trim();
   const newsletter = topic === "Newsletter signup" || data.get("newsletter") === "Yes";
   const subject = topic === "Newsletter signup"
     ? "Studio Wallnut newsletter signup"
     : `Studio Wallnut — ${topic}`;
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Topic: ${topic}`,
-    `Newsletter signup: ${newsletter ? "Yes" : "No"}`,
-    "",
-    message || "Please add me to the Studio Wallnut newsletter."
-  ].join("\n");
-  const mailto = `mailto:tingyamaany@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  contactForm.action = mailto;
-  contactForm.dataset.preparedMailto = mailto;
+  data.set("_subject", subject);
+  data.set("_replyto", email);
+  data.set("Newsletter signup", newsletter ? "Yes" : "No");
+  data.set("Source", "sprightgame.com");
+
+  contactSubmit?.setAttribute("disabled", "");
+  contactForm.setAttribute("aria-busy", "true");
+  if (contactSubmitLabel) contactSubmitLabel.textContent = "Sending…";
   if (contactStatus) {
-    contactStatus.textContent = "Email prepared. Approve it in your mail app to send.";
-    contactStatus.classList.add("is-ready");
+    contactStatus.textContent = "Sending securely to Studio Wallnut…";
+    contactStatus.classList.remove("is-ready", "is-error");
   }
-  analyticsEvent("contact_email_prepared", topic);
-  window.location.href = mailto;
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.success === false) throw new Error("Submission rejected");
+
+    contactForm.reset();
+    if (contactStatus) {
+      contactStatus.textContent = "Message sent. Studio Wallnut will be in touch.";
+      contactStatus.classList.add("is-ready");
+    }
+    analyticsEvent("contact_form_sent", topic);
+  } catch (error) {
+    if (contactStatus) {
+      contactStatus.textContent = "Message could not be sent. Please try again or email us directly.";
+      contactStatus.classList.add("is-error");
+    }
+    analyticsEvent("contact_form_error", topic);
+  } finally {
+    contactSubmit?.removeAttribute("disabled");
+    contactForm.removeAttribute("aria-busy");
+    if (contactSubmitLabel) contactSubmitLabel.textContent = "Send message";
+  }
 });
