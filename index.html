@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://sprightgame.com/">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preload" as="image" href="assets/backgrounds/carnival-far.webp" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=20260716-1">
+    <link rel="stylesheet" href="styles.css?v=20260717-3">
   </head>
   <body>
     <a class="skip-link" href="#game">Skip to the game</a>
@@ -247,8 +247,8 @@
           <p>Join the Studio Wallnut update list for Spright news, or open a direct conversation about investment, press, partnerships, and everything else.</p>
           <a href="mailto:tingyamaany@gmail.com">tingyamaany@gmail.com ↗</a>
         </div>
-        <form class="contact-form reveal reveal--delay" action="https://formsubmit.co/ajax/tingyamaany@gmail.com" method="post" data-contact-form>
-          <input class="contact-form__honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="contact-form reveal reveal--delay" role="form" aria-label="Contact Studio Wallnut" data-contact-form data-contact-endpoint="https://formsubmit.co/ajax/tingyamaany@gmail.com">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <input type="hidden" name="_template" value="table">
           <label>
             <span>Your name</span>
@@ -276,10 +276,10 @@
             <span>Also add me to the Studio Wallnut newsletter.</span>
           </label>
           <div class="contact-form__submit contact-form__wide">
-            <button class="button button--gold" type="submit"><span data-contact-submit-label>Send message</span><b>↗</b></button>
+            <button class="button button--gold" type="button" data-contact-submit><span data-contact-submit-label>Send message</span><b>↗</b></button>
             <p role="status" aria-live="polite" data-contact-status>Your details are delivered to Studio Wallnut without opening an email app.</p>
           </div>
-        </form>
+        </div>
       </section>
 
       <section class="final-cta">
@@ -312,6 +312,6 @@
     </dialog>
 
     <script src="scripts/analytics.js?v=20260716-1"></script>
-    <script src="scripts/main.js?v=20260716-1"></script>
+    <script src="scripts/main.js?v=20260717-3"></script>
   </body>
 </html>

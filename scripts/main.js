@@ -655,8 +655,9 @@ lightbox?.addEventListener("click", (event) => {
 
 const contactForm = $("[data-contact-form]");
 const contactStatus = $("[data-contact-status]");
-const contactSubmit = $("button[type='submit']", contactForm);
+const contactSubmit = $("[data-contact-submit]", contactForm);
 const contactSubmitLabel = $("[data-contact-submit-label]", contactForm);
+const contactControls = contactForm ? $$("input, select, textarea", contactForm) : [];
 
 if (contactForm && crownWidget) {
   const contactSection = contactForm.closest(".contact");
@@ -666,11 +667,20 @@ if (contactForm && crownWidget) {
   if (contactSection) contactObserver.observe(contactSection);
 }
 
-contactForm?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  if (!contactForm.reportValidity()) return;
+const sendContactMessage = async () => {
+  const invalidControl = contactControls.find((control) => !control.checkValidity());
+  if (invalidControl) {
+    invalidControl.reportValidity();
+    invalidControl.focus();
+    return;
+  }
 
-  const data = new FormData(contactForm);
+  const data = new FormData();
+  contactControls.forEach((control) => {
+    if (!control.name || control.disabled) return;
+    if ((control.type === "checkbox" || control.type === "radio") && !control.checked) return;
+    data.append(control.name, control.value);
+  });
   const email = String(data.get("email") || "").trim();
   const topic = String(data.get("topic") || "General question");
   const newsletter = topic === "Newsletter signup" || data.get("newsletter") === "Yes";
@@ -692,7 +702,7 @@ contactForm?.addEventListener("submit", async (event) => {
   }
 
   try {
-    const response = await fetch(contactForm.action, {
+    const response = await fetch(contactForm.dataset.contactEndpoint, {
       method: "POST",
       headers: { Accept: "application/json" },
       body: data
@@ -700,7 +710,16 @@ contactForm?.addEventListener("submit", async (event) => {
     const result = await response.json().catch(() => ({}));
     if (!response.ok || result.success === false) throw new Error("Submission rejected");
 
-    contactForm.reset();
+    contactControls.forEach((control) => {
+      if (control.type === "checkbox" || control.type === "radio") {
+        control.checked = control.defaultChecked;
+      } else if (control.tagName === "SELECT") {
+        const defaultIndex = [...control.options].findIndex((option) => option.defaultSelected);
+        control.selectedIndex = defaultIndex >= 0 ? defaultIndex : 0;
+      } else if (control.type !== "hidden") {
+        control.value = control.defaultValue;
+      }
+    });
     if (contactStatus) {
       contactStatus.textContent = "Message sent. Studio Wallnut will be in touch.";
       contactStatus.classList.add("is-ready");
@@ -717,4 +736,12 @@ contactForm?.addEventListener("submit", async (event) => {
     contactForm.removeAttribute("aria-busy");
     if (contactSubmitLabel) contactSubmitLabel.textContent = "Send message";
   }
+};
+
+contactSubmit?.addEventListener("click", sendContactMessage);
+contactForm?.addEventListener("keydown", (event) => {
+  const tagName = event.target.tagName;
+  if (event.key !== "Enter" || event.isComposing || tagName === "TEXTAREA" || tagName === "SELECT") return;
+  event.preventDefault();
+  sendContactMessage();
 });
